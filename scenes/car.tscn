@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgfy47po7r5kn"]
+
+[ext_resource type="Script" path="res://scripts/car.gd" id="1_m3u4i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qu14"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hewsp"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ye3xb"]
+height = 0.2
+
+[node name="car" type="RigidBody3D"]
+mass = 10.0
+linear_damp = 5.0
+angular_damp = 5.0
+script = ExtResource("1_m3u4i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8qu14")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hewsp")
+
+[node name="bl tire cast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -0.4, 1)
+
+[node name="br tire cast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, -0.4, 1)
+
+[node name="fl tire cast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -0.4, -1)
+
+[node name="fr tire cast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, -0.4, -1)
+
+[node name="wheelfl" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.8, -0.4, -1)
+shape = SubResource("CylinderShape3D_ye3xb")
+
+[node name="wheelfr" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.8, -0.4, -1)
+shape = SubResource("CylinderShape3D_ye3xb")
+
+[node name="wheelbl" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.8, -0.4, 1)
+shape = SubResource("CylinderShape3D_ye3xb")
+
+[node name="wheelbr" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.8, -0.4, 1)
+shape = SubResource("CylinderShape3D_ye3xb")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 1.235, 1.6, 3.2)
