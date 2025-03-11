@@ -236,12 +236,14 @@ shape = SubResource("ConvexPolygonShape3D_1nhew")
 
 [node name="WheelBackRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.3, -0.653875)
-wheel_roll_influence = 1.0
+wheel_roll_influence = 5.0
 wheel_radius = 0.3
+wheel_rest_length = 0.1
 wheel_friction_slip = 5.0
+suspension_travel = 0.3
 suspension_stiffness = 100.0
-damping_compression = 2.3
-damping_relaxation = 2.5
+damping_compression = 0.5
+damping_relaxation = 0.7
 
 [node name="wheel-back-right" type="MeshInstance3D" parent="WheelBackRight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.00657403)
@@ -250,12 +252,14 @@ skeleton = NodePath("")
 
 [node name="WheelBackLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.3, -0.653875)
-wheel_roll_influence = 1.0
+wheel_roll_influence = 5.0
 wheel_radius = 0.3
+wheel_rest_length = 0.1
 wheel_friction_slip = 5.0
+suspension_travel = 0.3
 suspension_stiffness = 100.0
-damping_compression = 2.3
-damping_relaxation = 2.5
+damping_compression = 0.5
+damping_relaxation = 0.7
 
 [node name="wheel-back-left" type="MeshInstance3D" parent="WheelBackLeft"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.00657403)
@@ -264,13 +268,16 @@ skeleton = NodePath("")
 
 [node name="WheelFrontRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.3, 0.656971)
+use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 1.0
+wheel_roll_influence = 5.0
 wheel_radius = 0.3
+wheel_rest_length = 0.1
 wheel_friction_slip = 5.0
+suspension_travel = 0.3
 suspension_stiffness = 100.0
-damping_compression = 2.3
-damping_relaxation = 2.5
+damping_compression = 0.5
+damping_relaxation = 0.7
 
 [node name="wheel-front-right" type="MeshInstance3D" parent="WheelFrontRight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.00257409)
@@ -279,13 +286,16 @@ skeleton = NodePath("")
 
 [node name="WheelFrontLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.3, 0.656971)
+use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 1.0
+wheel_roll_influence = 5.0
 wheel_radius = 0.3
+wheel_rest_length = 0.1
 wheel_friction_slip = 5.0
+suspension_travel = 0.3
 suspension_stiffness = 100.0
-damping_compression = 2.3
-damping_relaxation = 2.5
+damping_compression = 0.5
+damping_relaxation = 0.7
 
 [node name="wheel-front-left" type="MeshInstance3D" parent="WheelFrontLeft"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.00257409)

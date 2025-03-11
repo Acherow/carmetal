@@ -1,4 +1,5 @@
 extends VehicleBody3D
+class_name car
 
 @export_category("Car Settings")
 ## max steer in radians for the front wheels- defaults to 0.45
@@ -10,8 +11,6 @@ extends VehicleBody3D
 ## the maximum rear wheel rpm. The actual engine torque is scaled in a linear vector to ensure the rear wheels will never go beyond this given rpm.
 ## The default value is 600rpm
 @export var max_wheel_rpm : float = 600.0
-## How quickly the wheel responds to player input- equates to seconds to reach maximum steer. Default is 2.0
-@export var steer_damping = 2.0
 ## How sticky are the front wheels. Default is 5. 0 is frictionless._add_constant_central_force
 @export var front_wheel_grip : float = 5.0
 ## How sticky are the rear wheel. Default is 5. Try lower value for a more drift experience
@@ -21,8 +20,11 @@ extends VehicleBody3D
 #local member variables
 var player_acceleration : float = 0.0
 var player_braking : float = 0.0
-var player_steer : float = 0.0
+var _playersteer : float = 0.0
+
 var player_input : Vector2 = Vector2.ZERO
+var player_drift : bool = false
+var player_boost : bool = false
 
 #an exporetd array of driving wheels so we can limit rom of each wheel when we process input
 @onready var driving_wheels : Array[VehicleWheel3D] = [$WheelBackLeft,$WheelBackRight]
@@ -37,24 +39,27 @@ func _ready() -> void:
 		wheel.wheel_friction_slip = rear_wheel_grip
 
 func _physics_process(delta: float) -> void:
+	var global_velocity: Vector3 = linear_velocity
+	var local_velocity = global_basis.inverse() * global_velocity
+	#print(local_velocity)
+	apply_force(global_basis.x * local_velocity.x * 10)
+	
+	for wheel in driving_wheels:
+		wheel.wheel_friction_slip = rear_wheel_grip
 	get_input(delta)
 	#now process steering and braking
-	steering = player_steer
+	steering = _playersteer
 	brake = player_braking
 	#cos we want to limit rpm- control each driving wheel individually
 	for wheel in driving_wheels:
 		#linearly reduce engine force based on the wheels current rpm and the player input
 		var actual_force : float = player_acceleration * ((-max_torque/max_wheel_rpm) * abs(wheel.get_rpm()) + max_torque) 
-		wheel.engine_force = actual_force
+		wheel.engine_force = actual_force * (1 if !player_boost else 2)
 
-
-## sets the variables player_steer, player_brake and player_acceleration based on the player input
 func get_input(delta : float):
 	#steer first
-	player_input.x = Input.get_axis("right","left")
-	player_steer = move_toward(player_steer, player_input.x * max_steer,steer_damping * delta)
+	_playersteer = player_input.x * max_steer
 	#now acceleration and/or braking
-	player_input.y = Input.get_axis("down","up")
 	if player_input.y > 0.01:
 		#accelerating
 		player_acceleration = player_input.y

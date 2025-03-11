@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://djuogaauu2o05"]
+[gd_scene load_steps=14 format=3 uid="uid://djuogaauu2o05"]
 
 [ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="1_fxqgc"]
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_m7ru0"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_se1mj"]
+[ext_resource type="Texture2D" uid="uid://cjseyimrkxxax" path="res://road.png" id="4_1hrhv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u0o5n"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,8 +17,35 @@ background_mode = 2
 sky = SubResource("Sky_d0m3a")
 tonemap_mode = 2
 glow_enabled = true
+fog_light_color = Color(0.517647, 0.882353, 0.607843, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.3036, 0.46, 0.3036, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nc7ia"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p8n8q"]
+size = Vector3(20, 10, 20)
+
+[sub_resource type="Curve3D" id="Curve3D_8i7f3"]
+_data = {
+"points": PackedVector3Array(-0.0135288, 0.137072, -4.20474, 0.0135288, -0.137072, 4.20474, 0, 0, 0, -13.7, 0, -28.2, 13.7, 0, 28.2, 10, 0, 75.3, -36.8, 0, 0.8, 36.8, 0, -0.8, 88.1, 0, 106.1, -7.8, 0, 34.8, 7.8, 0, -34.8, 147.6, 0, 60, -1.2, 0, 25.3, 1.2, 0, -25.3, 158.1, 0, -2.4, 10.2, 0, 10.2, -10.2, 0, -10.2, 136.9, 0, -61.3, 46.3, 0, -2, -46.3, 0, 2, 60.5, 0, -93.5, 6.4, 0, -20, -6.4, 0, 20, 4.5, 0, -55.5, 0.3, 0, -6.1, -0.3, 0, 6.1, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g87kq"]
+albedo_texture = ExtResource("4_1hrhv")
+uv1_scale = Vector3(-0.255, 4, 4)
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2pch"]
+diffuse_mode = 3
+albedo_color = Color(0.8, 0.691467, 0.208, 1)
+metallic_specular = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_flwbk"]
+material = SubResource("StandardMaterial3D_v2pch")
+size = Vector2(2000, 2000)
 
 [node name="Node3D" type="Node3D"]
 
@@ -32,7 +61,42 @@ shadow_enabled = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_nc7ia")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 159.2, -2.5, 0)
+shape = SubResource("BoxShape3D_p8n8q")
+
 [node name="car" parent="." instance=ExtResource("1_fxqgc")]
+linear_damp = 0.5
+angular_damp = 2.0
+max_steer = 0.3
+max_torque = 1000.0
+max_wheel_rpm = 6000.0
+rear_wheel_grip = 10.0
+
+[node name="PlayerController" type="Node" parent="car"]
+script = ExtResource("2_se1mj")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_m7ru0")]
 follow_target = NodePath("../car")
+rotation_damping = 10.0
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_8i7f3")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(-20, 0, 0, 0.1, 20, 0.1, 4, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 10.0
+path_joined = false
+material = SubResource("StandardMaterial3D_g87kq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("PlaneMesh_flwbk")
