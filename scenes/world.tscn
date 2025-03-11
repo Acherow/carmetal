@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://djuogaauu2o05"]
+[gd_scene load_steps=15 format=3 uid="uid://djuogaauu2o05"]
 
 [ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="1_fxqgc"]
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_m7ru0"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_se1mj"]
 [ext_resource type="Texture2D" uid="uid://cjseyimrkxxax" path="res://road.png" id="4_1hrhv"]
+[ext_resource type="Script" path="res://scripts/race_manager.gd" id="5_6lhsm"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u0o5n"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bd5dm"]
+sky_top_color = Color(0, 0.479349, 0.705601, 1)
+sky_horizon_color = Color(4.62055e-06, 0.75839, 0.675317, 1)
 
 [sub_resource type="Sky" id="Sky_d0m3a"]
-sky_material = SubResource("ProceduralSkyMaterial_u0o5n")
+sky_material = SubResource("ProceduralSkyMaterial_bd5dm")
 
 [sub_resource type="Environment" id="Environment_565dx"]
 background_mode = 2
@@ -70,6 +71,7 @@ linear_damp = 0.5
 angular_damp = 2.0
 max_steer = 0.3
 max_torque = 1000.0
+max_brake_force = 2.0
 max_wheel_rpm = 6000.0
 rear_wheel_grip = 10.0
 
@@ -100,3 +102,6 @@ material = SubResource("StandardMaterial3D_g87kq")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("PlaneMesh_flwbk")
+
+[node name="race manager" type="Node" parent="."]
+script = ExtResource("5_6lhsm")

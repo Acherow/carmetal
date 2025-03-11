@@ -1,6 +1,9 @@
 extends VehicleBody3D
 class_name car
 
+var health : int = 100
+var boost : int = 100
+
 @export_category("Car Settings")
 ## max steer in radians for the front wheels- defaults to 0.45
 @export var max_steer : float = 0.45
@@ -42,7 +45,7 @@ func _physics_process(delta: float) -> void:
 	var global_velocity: Vector3 = linear_velocity
 	var local_velocity = global_basis.inverse() * global_velocity
 	#print(local_velocity)
-	apply_force(global_basis.x * local_velocity.x * 10)
+	apply_force(global_basis.x * local_velocity.x * -30)
 	
 	for wheel in driving_wheels:
 		wheel.wheel_friction_slip = rear_wheel_grip
@@ -54,7 +57,9 @@ func _physics_process(delta: float) -> void:
 	for wheel in driving_wheels:
 		#linearly reduce engine force based on the wheels current rpm and the player input
 		var actual_force : float = player_acceleration * ((-max_torque/max_wheel_rpm) * abs(wheel.get_rpm()) + max_torque) 
-		wheel.engine_force = actual_force * (1 if !player_boost else 2)
+		wheel.engine_force = actual_force * (1 if !player_boost else 3)
+	if(player_boost):
+		boost -= delta
 
 func get_input(delta : float):
 	#steer first
@@ -73,7 +78,7 @@ func get_input(delta : float):
 		else:
 			#reverse
 			player_braking = 0.0
-			player_acceleration = player_input.y
+			player_acceleration = player_input.y/2
 	else:
 		player_acceleration = 0.0
 		player_braking = 0.0
