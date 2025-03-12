@@ -2,7 +2,7 @@ extends Node
 
 @export var maxlaps : int = 3
 
-@export var racerstobe : Array[car]
+@export var racerstobe : Node3D
 
 var racers : Array[carinfo]
 var allracers : Array[carinfo]
@@ -11,7 +11,7 @@ var checkpoints : PackedVector3Array
 @export var path : Path3D
 
 func _ready() -> void:
-	for n in racerstobe:
+	for n in racerstobe.get_children():
 		var info : carinfo = carinfo.new()
 		info.carobj = n
 		racers.append(info)
