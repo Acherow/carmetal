@@ -31,4 +31,4 @@ func GetDirection(pos : Vector3) -> Vector2:
 	#print(ret)
 	if(ret.z < 0):
 		ret.x = -ret.x
-	return Vector2(ret.x,ret.z)
+	return Vector2(roundi(ret.x),roundi(ret.z))
