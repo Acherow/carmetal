@@ -6,18 +6,18 @@ var boost : int = 100
 
 #@export_category("Car Settings")
 ## max steer in radians for the front wheels- defaults to 0.45
-var max_steer : float = .5
+var max_steer : float = .2
 ## the maximum torque that the engine will sent to the rear wheels- defaults to 300
-var max_torque : float = 400.0
+var max_torque : float = 600.0
 ## the maximum amount of braking force applied to the wheel. Default is 1.0
 var max_brake_force : float = 2.0
 ## the maximum rear wheel rpm. The actual engine torque is scaled in a linear vector to ensure the rear wheels will never go beyond this given rpm.
 ## The default value is 600rpm
-var max_wheel_rpm : float = 1000.0
+var max_wheel_rpm : float = 3000.0
 ## How sticky are the front wheels. Default is 5. 0 is frictionless._add_constant_central_force
-var front_wheel_grip : float = 20.0
+var front_wheel_grip : float = 30.0
 ## How sticky are the rear wheel. Default is 5. Try lower value for a more drift experience
-var rear_wheel_grip : float = 30.0
+var rear_wheel_grip : float = 20.0
 
 
 #local member variables
@@ -70,7 +70,7 @@ func get_input(delta : float):
 	_playersteer = player_input.x * max_steer
 	
 	#for n in frontwheels:
-		#n.rotation.y = _playersteer
+		#n.rotation.y = lerp(n.rotation.y, _playersteer, .2)
 	#now acceleration and/or braking
 	if player_input.y > 0.01:
 		#accelerating

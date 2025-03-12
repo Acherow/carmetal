@@ -99,5 +99,6 @@ material = SubResource("StandardMaterial3D_g87kq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("PlaneMesh_flwbk")
 
-[node name="race manager" type="Node" parent="."]
+[node name="racemanager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("5_6lhsm")

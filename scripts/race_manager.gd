@@ -6,7 +6,11 @@ extends Node
 @export var allracers : Array[carinfo]
 @export var endplacements : Array[carinfo]
 
-@export var checkpoints : Array[Node3D]
+@export var checkpoints : Array[PackedVector3Array]
+@export var path : Path3D
+
+func _ready() -> void:
+	checkpoints = path.curve.get_baked_points()
 
 func _process(delta: float) -> void:
 	racers = racers.filter(func(a): return a.carobj != null)
@@ -36,9 +40,10 @@ func checkplacement(racer : carinfo):
 	var index = 0
 	var dist = 9999
 	for n in checkpoints.size():
-		if(racer.carobj.global_position.distance_to(checkpoints[n].global_position) < dist):
+		var v = checkpoints[n]
+		if(racer.carobj.global_position.distance_to(v) < dist):
 			index = n
-			dist = racer.carobj.global_position.distance_to(checkpoints[n].global_position)
+			dist = racer.carobj.global_position.distance_to(v)
 	if(racer.checkpoint == index - 2):
 		racer.checkpointcount += 2
 		racer.checkpoint = index

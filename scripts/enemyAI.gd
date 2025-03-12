@@ -14,11 +14,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(target && carobj.global_position.distance_to(target.global_position) > .1):
 		carobj.player_input = GetDirection(target.global_position)
-
+	else:
+		carobj.player_input = Vector2.ZERO
+	
+	if(%racemanager.getInfo(carobj) != null && %racemanager.getInfo(carobj).lap <= %racemanager.maxlaps):
+		target = %racemanager.checkpoints[(%racemanager.getInfo(carobj).checkpoint+1)% %racemanager.checkpoints.size()]
+	else: target = null
 func GetDirection(pos : Vector3) -> Vector2:
 	var raydirs = []
 	for i in 8:
 		var angle = i * 2 * PI / 8
 		raydirs[i] = Vector3.FORWARD.rotated(Vector3.UP, angle)
 	var ret = Navigation.steering(raydirs, target, carobj, carobj.linear_velocity,5)
-	return ret
+	return Vector2(ret.x,ret.y)

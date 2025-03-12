@@ -701,6 +701,8 @@ shadow_mesh = SubResource("ArrayMesh_68q2y")
 [node name="car" type="VehicleBody3D"]
 collision_layer = 2
 physics_material_override = ExtResource("1_vukum")
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.2, 0)
 script = ExtResource("1_ymx53")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -793,6 +795,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.786009, 1.29417, 0.471891)
 mesh = SubResource("ArrayMesh_eohjx")
 skeleton = NodePath("")
 
+[node name="retrovisor2" type="MeshInstance3D" parent="First Car/chassi principal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.813991, 1.29417, 0.471891)
+mesh = SubResource("ArrayMesh_eohjx")
+skeleton = NodePath("")
+
 [node name="vidro traseiro" type="MeshInstance3D" parent="First Car/chassi principal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55725, -1.31173)
 mesh = SubResource("ArrayMesh_54jsv")
@@ -811,7 +818,7 @@ skeleton = NodePath("")
 [node name="WheelFrontLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876955, 0.467113, 1.19034)
 use_as_steering = true
-wheel_roll_influence = 5.0
+wheel_roll_influence = 2e+07
 wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
@@ -826,7 +833,7 @@ skeleton = NodePath("")
 
 [node name="WheelBackLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876955, 0.467113, -1.32627)
-wheel_roll_influence = 5.0
+wheel_roll_influence = 2e+07
 wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
@@ -842,7 +849,7 @@ skeleton = NodePath("")
 [node name="WheelFrontRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.892189, 0.467113, 1.19034)
 use_as_steering = true
-wheel_roll_influence = 5.0
+wheel_roll_influence = 2e+07
 wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
@@ -857,7 +864,7 @@ skeleton = NodePath("")
 
 [node name="WheelBackRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.904412, 0.464279, -1.30778)
-wheel_roll_influence = 5.0
+wheel_roll_influence = 2e+07
 wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
