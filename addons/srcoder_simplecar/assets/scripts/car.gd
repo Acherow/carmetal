@@ -33,7 +33,7 @@ var player_boost : bool = false
 @onready var driving_wheels : Array[VehicleWheel3D] = [$WheelBackLeft,$WheelBackRight]
 @onready var steering_wheels : Array[VehicleWheel3D] = [$WheelFrontLeft,$WheelFrontRight]
 
-var on : bool = false
+var on : bool = true
 
 func _ready() -> void:
 	#set wheel friction slip
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	var global_velocity: Vector3 = linear_velocity
 	var local_velocity = global_basis.inverse() * global_velocity
 	#print(local_velocity)
-	apply_force(global_basis.x * local_velocity.x * -30)
+	apply_force(global_basis.x * local_velocity.x * -80)
 	
 	for wheel in driving_wheels:
 		wheel.wheel_friction_slip = rear_wheel_grip
@@ -68,6 +68,9 @@ func get_input(delta : float):
 	
 	#steer first
 	_playersteer = player_input.x * max_steer
+	
+	#for n in steering_wheels:
+		#n.rotation.y = _playersteer
 	#now acceleration and/or braking
 	if player_input.y > 0.01:
 		#accelerating

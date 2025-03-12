@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://d3e2vgh5raxjf" path="res://PIXEL texture/vidro_BaseColor.png" id="15_tokg6"]
 [ext_resource type="Texture2D" uid="uid://pncemqepegbm" path="res://PIXEL texture/pneu_BaseColor.png" id="16_cqh14"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1nhew"]
-points = PackedVector3Array(0.65, 0.249961, 1.12499, 0.620605, 0.249961, 1.19562, 0.65, 0.0499364, 1.12499, 0.65, 0.425715, 0.960743, 0.620605, 0.0499364, 1.19562, 0.54998, 0.449985, 1.17491, 0.54998, 0.249961, 1.22483, 0.124961, 0, 1.275, 0.65, 0.0499364, -1.12523, 0.65, 0.48774, 0.87987, 0.54998, 0.0499364, 1.22483, -0.550108, 0.449985, 1.17491, 0.124961, 0.174917, 1.275, 0.54998, 0.59998, 0.924799, 0.174971, 0.12498, 1.275, 0.174971, 0.0499364, 1.275, -0.125088, 0, 1.275, 0.124961, 0, -1.275, 0.620605, 0.0499364, -1.19587, 0.65, 0.249961, -1.12523, 0.65, 0.526703, 0.785767, -0.620732, 0.249961, 1.19562, -0.550108, 0.249961, 1.22483, -0.125088, 0.174917, 1.275, -0.550108, 0.59998, 0.924799, -0.65, 0.48774, 0.87987, -0.65, 0.425715, 0.960743, 0.65, 0.649917, 0.447798, 0.449961, 0.95, 0.174976, -0.175098, 0.0499364, 1.275, -0.550108, 0.0499364, 1.22483, -0.620732, 0.0499364, 1.19562, -0.65, 0.0499364, 1.12499, -0.125088, 0, -1.275, 0.174971, 0.0499364, -1.275, 0.54998, 0.0499364, -1.22508, 0.620605, 0.249961, -1.19587, 0.54998, 0.449985, -1.22508, 0.65, 0.425715, -0.910821, -0.65, 0.249961, 1.12499, -0.175098, 0.12498, 1.275, -0.65, 0.649917, 0.447798, -0.65, 0.526703, 0.785767, -0.450088, 0.95, 0.174976, 0.65, 0.649917, 0.347705, 0.449961, 0.95, -0.525176, -0.65, 0.0499364, -1.12523, -0.620732, 0.0499364, -1.19587, -0.550108, 0.0499364, -1.22508, -0.175098, 0.0499364, -1.275, 0.174971, 0.12498, -1.275, 0.124961, 0.174917, -1.275, -0.550108, 0.449985, -1.22508, 0.54998, 0.649917, -0.825206, 0.65, 0.48774, -0.830198, -0.65, 0.649917, 0.347705, -0.450088, 0.95, -0.525176, 0.65, 0.539908, -0.635004, 0.65, 0.526703, -0.736095, -0.65, 0.249961, -1.12523, -0.620732, 0.249961, -1.19587, -0.175098, 0.12498, -1.275, -0.125088, 0.174917, -1.275, -0.65, 0.425715, -0.910821, -0.65, 0.48774, -0.830198, -0.550108, 0.649917, -0.825206, -0.65, 0.539908, -0.635004, -0.65, 0.526703, -0.736095)
+[sub_resource type="BoxShape3D" id="BoxShape3D_0g6d0"]
+size = Vector3(1.40527, 1.65869, 4.02441)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pafxv"]
 resource_name = "chassi principal"
@@ -704,8 +704,8 @@ physics_material_override = ExtResource("1_vukum")
 script = ExtResource("1_ymx53")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
-shape = SubResource("ConvexPolygonShape3D_1nhew")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870654, 0)
+shape = SubResource("BoxShape3D_0g6d0")
 
 [node name="First Car" type="Node3D" parent="."]
 
@@ -810,11 +810,9 @@ skeleton = NodePath("")
 
 [node name="WheelFrontLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876955, 0.467113, 1.19034)
-use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 5.0
-wheel_radius = 0.3
-wheel_rest_length = 0.1
+wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
 suspension_stiffness = 100.0
@@ -822,15 +820,14 @@ damping_compression = 0.5
 damping_relaxation = 0.7
 
 [node name="pneu" type="MeshInstance3D" parent="WheelFrontLeft"]
-transform = Transform3D(0.988383, 0, 0.151985, 0, 1, 0, -0.151985, 0, 0.988383, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
 
 [node name="WheelBackLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876955, 0.467113, -1.32627)
 wheel_roll_influence = 5.0
-wheel_radius = 0.3
-wheel_rest_length = 0.1
+wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
 suspension_stiffness = 100.0
@@ -838,17 +835,15 @@ damping_compression = 0.5
 damping_relaxation = 0.7
 
 [node name="pneu2" type="MeshInstance3D" parent="WheelBackLeft"]
-transform = Transform3D(0.988383, 0, 0.151985, 0, 1, 0, -0.151985, 0, 0.988383, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
 
 [node name="WheelFrontRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.892189, 0.467113, 1.19034)
-use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 5.0
-wheel_radius = 0.3
-wheel_rest_length = 0.1
+wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
 suspension_stiffness = 100.0
@@ -856,15 +851,14 @@ damping_compression = 0.5
 damping_relaxation = 0.7
 
 [node name="pneu3" type="MeshInstance3D" parent="WheelFrontRight"]
-transform = Transform3D(-0.994041, 0, 0.109006, 0, 1, 0, -0.109006, 0, -0.994041, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
 
 [node name="WheelBackRight" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-0.994041, 0, 0.109006, 0, 1, 0, -0.109006, 0, -0.994041, -0.904412, 0.464279, -1.30778)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.904412, 0.464279, -1.30778)
 wheel_roll_influence = 5.0
-wheel_radius = 0.3
-wheel_rest_length = 0.1
+wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
 suspension_travel = 0.3
 suspension_stiffness = 100.0
