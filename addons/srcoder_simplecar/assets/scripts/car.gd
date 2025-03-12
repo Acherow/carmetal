@@ -6,7 +6,7 @@ var boost : int = 100
 
 #@export_category("Car Settings")
 ## max steer in radians for the front wheels- defaults to 0.45
-var max_steer : float = 0.5
+var max_steer : float = .5
 ## the maximum torque that the engine will sent to the rear wheels- defaults to 300
 var max_torque : float = 400.0
 ## the maximum amount of braking force applied to the wheel. Default is 1.0
@@ -30,16 +30,16 @@ var player_drift : bool = false
 var player_boost : bool = false
 
 #an exporetd array of driving wheels so we can limit rom of each wheel when we process input
-@onready var driving_wheels : Array[VehicleWheel3D] = [$WheelBackLeft,$WheelBackRight]
-@onready var steering_wheels : Array[VehicleWheel3D] = [$WheelFrontLeft,$WheelFrontRight]
+@onready var backwheels : Array[VehicleWheel3D] = [$WheelBackLeft,$WheelBackRight]
+@onready var frontwheels : Array[VehicleWheel3D] = [$WheelFrontLeft,$WheelFrontRight]
 
 var on : bool = true
 
 func _ready() -> void:
 	#set wheel friction slip
-	for wheel in steering_wheels:
+	for wheel in frontwheels:
 		wheel.wheel_friction_slip = front_wheel_grip
-	for wheel in driving_wheels:
+	for wheel in backwheels:
 		wheel.wheel_friction_slip = rear_wheel_grip
 
 func _physics_process(delta: float) -> void:
@@ -48,14 +48,14 @@ func _physics_process(delta: float) -> void:
 	#print(local_velocity)
 	apply_force(global_basis.x * local_velocity.x * -80)
 	
-	for wheel in driving_wheels:
+	for wheel in backwheels:
 		wheel.wheel_friction_slip = rear_wheel_grip
 	get_input(delta)
 	#now process steering and braking
 	steering = _playersteer
 	brake = player_braking
 	#cos we want to limit rpm- control each driving wheel individually
-	for wheel in driving_wheels:
+	for wheel in frontwheels:
 		#linearly reduce engine force based on the wheels current rpm and the player input
 		var actual_force : float = player_acceleration * ((-max_torque/max_wheel_rpm) * abs(wheel.get_rpm()) + max_torque) 
 		wheel.engine_force = actual_force * (1 if !player_boost else 3)
@@ -69,7 +69,7 @@ func get_input(delta : float):
 	#steer first
 	_playersteer = player_input.x * max_steer
 	
-	#for n in steering_wheels:
+	#for n in frontwheels:
 		#n.rotation.y = _playersteer
 	#now acceleration and/or braking
 	if player_input.y > 0.01:
