@@ -16,5 +16,9 @@ func _process(delta: float) -> void:
 		carobj.player_input = GetDirection(target.global_position)
 
 func GetDirection(pos : Vector3) -> Vector2:
-	var ret = Vector2.ZERO
+	var raydirs = []
+	for i in 8:
+		var angle = i * 2 * PI / 8
+		raydirs[i] = Vector3.FORWARD.rotated(Vector3.UP, angle)
+	var ret = Navigation.steering(raydirs, target, carobj, carobj.linear_velocity,5)
 	return ret
