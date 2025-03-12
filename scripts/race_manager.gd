@@ -2,14 +2,20 @@ extends Node
 
 @export var maxlaps : int = 3
 
-@export var racers : Array[carinfo]
-@export var allracers : Array[carinfo]
-@export var endplacements : Array[carinfo]
+@export var racerstobe : Array[car]
 
-@export var checkpoints : Array[PackedVector3Array]
+var racers : Array[carinfo]
+var allracers : Array[carinfo]
+var endplacements : Array[carinfo]
+var checkpoints : PackedVector3Array
 @export var path : Path3D
 
 func _ready() -> void:
+	for n in racerstobe:
+		var info : carinfo = carinfo.new()
+		info.carobj = n
+		racers.append(info)
+	
 	checkpoints = path.curve.get_baked_points()
 
 func _process(delta: float) -> void:

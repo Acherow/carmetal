@@ -2,7 +2,7 @@ extends Node
 
 @export var avoidradius = 4
 
-var target : Node3D
+var target : Vector3
 var carobj : car
 
 func _ready() -> void:
@@ -12,16 +12,17 @@ func _ready() -> void:
 		queue_free()
 
 func _process(delta: float) -> void:
-	if(target && carobj.global_position.distance_to(target.global_position) > .1):
-		carobj.player_input = GetDirection(target.global_position)
+	if(target && carobj.global_position.distance_to(target) > .1):
+		carobj.player_input = GetDirection(target)
 	else:
 		carobj.player_input = Vector2.ZERO
 	
 	if(%racemanager.getInfo(carobj) != null && %racemanager.getInfo(carobj).lap <= %racemanager.maxlaps):
 		target = %racemanager.checkpoints[(%racemanager.getInfo(carobj).checkpoint+1)% %racemanager.checkpoints.size()]
-	else: target = null
+	else: target = Vector3.ZERO
 func GetDirection(pos : Vector3) -> Vector2:
 	var raydirs = []
+	raydirs.resize(8)
 	for i in 8:
 		var angle = i * 2 * PI / 8
 		raydirs[i] = Vector3.FORWARD.rotated(Vector3.UP, angle)

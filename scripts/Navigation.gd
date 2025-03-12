@@ -11,7 +11,7 @@ func basis_rotate_toward(originBasis, targetBasis, amount):
 func _get_interest(target, origin, raydirs) -> Array:
 	var interest = []
 	interest.resize(raydirs.size())
-	var targetdir = (target.transform.origin - origin.transform.origin).normalized()
+	var targetdir = (target - origin.transform.origin).normalized()
 	for i in raydirs.size():
 		var d = raydirs[i].rotated(Vector3.UP, origin.rotation.y).dot(targetdir)
 		interest[i] = max(0, d)
@@ -23,7 +23,7 @@ func _get_danger(target, origin, originoffset, range, raydirs) -> Array:
 	var space = origin.get_world_3d().direct_space_state
 	for i in raydirs.size():
 		var params = PhysicsRayQueryParameters3D.create(origin.position + originoffset, 
-		origin.position + originoffset + raydirs[i].rotated(Vector3.UP, origin.rotation.y) * range, 0xFFFFFFFF, [origin, target])
+		origin.position + originoffset + raydirs[i].rotated(Vector3.UP, origin.rotation.y) * range, 0xFFFFFFFF, [origin])
 		var result = space.intersect_ray(params)
 		if(result):
 			danger[i] = 1 - clampf(origin.position.distance_to(result.position) / range, 0.0, 1.0)
