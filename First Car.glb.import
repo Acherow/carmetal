@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhdbb3ajbocid"
-path="res://.godot/imported/CarWar gamejam.glb-1f21724e18bc092a9577a8d304ca4163.scn"
+uid="uid://bhye3wtb5cpux"
+path="res://.godot/imported/First Car.glb-28a2ec6aec31d09c84b62e0f823d17b1.scn"
 
 [deps]
 
-source_file="res://CarWar gamejam.glb"
-dest_files=["res://.godot/imported/CarWar gamejam.glb-1f21724e18bc092a9577a8d304ca4163.scn"]
+source_file="res://First Car.glb"
+dest_files=["res://.godot/imported/First Car.glb-28a2ec6aec31d09c84b62e0f823d17b1.scn"]
 
 [params]
 
