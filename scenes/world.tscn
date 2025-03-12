@@ -70,12 +70,6 @@ shape = SubResource("BoxShape3D_p8n8q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3924, 0)
 linear_damp = 0.5
 angular_damp = 2.0
-max_steer = 0.5
-max_torque = 400.0
-max_brake_force = 2.0
-max_wheel_rpm = 6000.0
-front_wheel_grip = 20.0
-rear_wheel_grip = 30.0
 
 [node name="PlayerController" type="Node" parent="car"]
 script = ExtResource("2_se1mj")

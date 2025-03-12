@@ -4,20 +4,20 @@ class_name car
 var health : int = 100
 var boost : int = 100
 
-@export_category("Car Settings")
+#@export_category("Car Settings")
 ## max steer in radians for the front wheels- defaults to 0.45
-@export var max_steer : float = 0.45
+var max_steer : float = 0.5
 ## the maximum torque that the engine will sent to the rear wheels- defaults to 300
-@export var max_torque : float = 300.0
+var max_torque : float = 400.0
 ## the maximum amount of braking force applied to the wheel. Default is 1.0
-@export var max_brake_force : float = 1.0
+var max_brake_force : float = 2.0
 ## the maximum rear wheel rpm. The actual engine torque is scaled in a linear vector to ensure the rear wheels will never go beyond this given rpm.
 ## The default value is 600rpm
-@export var max_wheel_rpm : float = 600.0
+var max_wheel_rpm : float = 1000.0
 ## How sticky are the front wheels. Default is 5. 0 is frictionless._add_constant_central_force
-@export var front_wheel_grip : float = 5.0
+var front_wheel_grip : float = 20.0
 ## How sticky are the rear wheel. Default is 5. Try lower value for a more drift experience
-@export var rear_wheel_grip : float = 5.0
+var rear_wheel_grip : float = 30.0
 
 
 #local member variables
