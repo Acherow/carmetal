@@ -699,7 +699,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_68q2y")
 
 [node name="car" type="VehicleBody3D"]
-collision_layer = 2
 physics_material_override = ExtResource("1_vukum")
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.2, 0)

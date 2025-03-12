@@ -14,6 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(target && carobj.global_position.distance_to(target) > .1):
 		carobj.player_input = GetDirection(target)
+		#print(carobj.player_input)
 	else:
 		carobj.player_input = Vector2.ZERO
 	
@@ -27,4 +28,7 @@ func GetDirection(pos : Vector3) -> Vector2:
 		var angle = i * 2 * PI / 8
 		raydirs[i] = Vector3.FORWARD.rotated(Vector3.UP, angle)
 	var ret = Navigation.steering(raydirs, target, carobj, carobj.linear_velocity,5)
-	return Vector2(ret.x,ret.y)
+	#print(ret)
+	if(ret.z < 0):
+		ret.x = -ret.x
+	return Vector2(ret.x,ret.z)

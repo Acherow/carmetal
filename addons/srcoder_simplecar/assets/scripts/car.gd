@@ -43,13 +43,13 @@ func _ready() -> void:
 		wheel.wheel_friction_slip = rear_wheel_grip
 
 func _physics_process(delta: float) -> void:
-	var global_velocity: Vector3 = linear_velocity
-	var local_velocity = global_basis.inverse() * global_velocity
-	#print(local_velocity)
-	apply_force(global_basis.x * local_velocity.x * -80)
+	if(!Input.is_action_pressed("drift")):
+		var global_velocity: Vector3 = linear_velocity
+		var local_velocity = global_basis.inverse() * global_velocity
+		apply_force(global_basis.x * local_velocity.x * -80)
 	
 	for wheel in backwheels:
-		wheel.wheel_friction_slip = rear_wheel_grip
+		wheel.wheel_friction_slip = rear_wheel_grip if !Input.is_action_pressed("drift") else 0
 	get_input(delta)
 	#now process steering and braking
 	steering = _playersteer

@@ -16,7 +16,10 @@ func _ready() -> void:
 		info.carobj = n
 		racers.append(info)
 	
-	checkpoints = path.curve.get_baked_points()
+	#checkpoints = path.curve.get_baked_points()
+	for index in path.curve.get_point_count():
+		checkpoints.append(path.curve.get_point_position(index))
+	
 
 func _process(delta: float) -> void:
 	racers = racers.filter(func(a): return a.carobj != null)
@@ -60,7 +63,6 @@ func checkplacement(racer : carinfo):
 		racer.lap += 1
 		racer.checkpointcount = 0
 		racer.checkpoint = 0
-	return [index, dist]
 
 func getInfo(obj : Node3D) -> carinfo:
 	for n in allracers:

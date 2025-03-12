@@ -29,7 +29,7 @@ func _get_danger(target, origin, originoffset, range, raydirs) -> Array:
 			danger[i] = 1 - clampf(origin.position.distance_to(result.position) / range, 0.0, 1.0)
 		else:
 			params = PhysicsRayQueryParameters3D.create(origin.position + originoffset + 
-			raydirs[i].rotated(Vector3.UP, origin.rotation.y) * (range/2), origin.position + raydirs[i].rotated(Vector3.UP, origin.rotation.y) * (range/2) + Vector3.DOWN * (range * 2), 0xFFFFFFFF, [origin, target])
+			raydirs[i].rotated(Vector3.UP, origin.rotation.y) * (range/2), origin.position + raydirs[i].rotated(Vector3.UP, origin.rotation.y) * (range/2) + Vector3.DOWN * (range * 2), 0xFFFFFFFF, [origin])
 			result = space.intersect_ray(params)
 			if(!result):
 				danger[i] = 1
