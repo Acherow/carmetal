@@ -1,12 +1,14 @@
 extends Node
 
+@export var maxlaps : int = 3
+
 @export var racers : Array[carinfo]
+@export var allracers : Array[carinfo]
+@export var endplacements : Array[carinfo]
 
 @export var checkpoints : Array[Node3D]
 
 func _process(delta: float) -> void:
-	var n : Node3D
-	#n.global_position.distance_to()
 	racers = racers.filter(func(a): return a.carobj != null)
 	racers.sort_custom(func(a,b): 
 		if(a.lap == b.lap):
@@ -15,8 +17,21 @@ func _process(delta: float) -> void:
 			else:
 				return a.checkpoint < b.checkpoint
 		else:
-			return a.lap < b.lap
-		)
+			return a.lap < b.lap)
+	
+	for n in racers.size():
+		checkplacement(racers[n])
+		if(racers[n].lap > maxlaps):
+			endplacements.append(racers[n])
+	racers.filter(func(a): return !endplacements.has(a))
+	allracers.clear()
+	allracers.append_array(endplacements)
+	allracers.append_array(racers)
+
+func startrace():
+	for n in racers:
+		n.carobj.on = true
+
 func checkplacement(racer : carinfo):
 	var index = 0
 	var dist = 9999
@@ -35,3 +50,9 @@ func checkplacement(racer : carinfo):
 		racer.checkpointcount = 0
 		racer.checkpoint = 0
 	return [index, dist]
+
+func getInfo(obj : Node3D) -> carinfo:
+	for n in allracers:
+		if(n.carobj == obj):
+			return n
+	return null

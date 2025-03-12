@@ -86,7 +86,7 @@ rotation_damping = 10.0
 curve = SubResource("Curve3D_8i7f3")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
-polygon = PackedVector2Array(-20, 0, 0, 0.1, 20, 0.1, 4, 0)
+polygon = PackedVector2Array(-30, 0, 0, 0.1, 30, 0.1, 4, 0)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0

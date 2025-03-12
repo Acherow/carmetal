@@ -33,6 +33,7 @@ var player_boost : bool = false
 @onready var driving_wheels : Array[VehicleWheel3D] = [$WheelBackLeft,$WheelBackRight]
 @onready var steering_wheels : Array[VehicleWheel3D] = [$WheelFrontLeft,$WheelFrontRight]
 
+var on : bool = false
 
 func _ready() -> void:
 	#set wheel friction slip
@@ -62,6 +63,9 @@ func _physics_process(delta: float) -> void:
 		boost -= delta
 
 func get_input(delta : float):
+	if(!on):
+		return
+	
 	#steer first
 	_playersteer = player_input.x * max_steer
 	#now acceleration and/or braking
