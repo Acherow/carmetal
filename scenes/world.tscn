@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d0c3sdautg2l4" path="res://PIXEL texture/chassi principal_BaseColorenemy2.png" id="19_c7yee"]
 [ext_resource type="Texture2D" uid="uid://bl52crqqtr4hy" path="res://PIXEL texture/chassi principal_BaseColorenemy3.png" id="20_kth6j"]
 [ext_resource type="Texture2D" uid="uid://c41q8r0ssrndm" path="res://PIXEL texture/chassi principal_BaseColorenemy.png" id="21_oy5w6"]
-[ext_resource type="PackedScene" uid="uid://l0ywxdjsxbbi" path="res://objects/truck.tscn" id="23_g8qpx"]
+[ext_resource type="PackedScene" path="res://objects/truck.tscn" id="23_g8qpx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bd5dm"]
 sky_top_color = Color(0, 0.479349, 0.705601, 1)
