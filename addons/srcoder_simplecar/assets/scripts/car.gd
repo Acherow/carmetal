@@ -114,4 +114,5 @@ func collisionentered(body):
 	var damage = body.linear_velocity.length() - linear_velocity.length()
 	if(linear_velocity.length() < body.linear_velocity.length()):
 		health -= damage
-	boost += damage
+	else:
+		boost += damage
