@@ -1,0 +1,333 @@
+[gd_scene load_steps=52 format=3 uid="uid://cmx5c2dabntjt"]
+
+[ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="1_65af0"]
+[ext_resource type="Texture2D" uid="uid://cjseyimrkxxax" path="res://road.png" id="2_8ooqr"]
+[ext_resource type="Script" path="res://scripts/race_manager.gd" id="3_nixuq"]
+[ext_resource type="PackedScene" uid="uid://b35ip43ee7rdx" path="res://models/Pipe_Curved_1.glb" id="4_7fcsm"]
+[ext_resource type="PackedScene" uid="uid://x8nlt5sf1etu" path="res://models/Pipe_Curved_2.glb" id="5_at2i0"]
+[ext_resource type="PackedScene" uid="uid://o5ggnxautrhi" path="res://models/Pipe_Straight_1.glb" id="6_wrbyc"]
+[ext_resource type="PackedScene" uid="uid://csxer1tfyna50" path="res://models/Pipe_Straight_2.glb" id="7_5lmp3"]
+[ext_resource type="PackedScene" uid="uid://d30661gspbv1d" path="res://models/Semi_Circle_1.glb" id="8_qvjaa"]
+[ext_resource type="PackedScene" uid="uid://jmqs7ard4iuj" path="res://models/Semi_Circle_2.glb" id="9_5e1c0"]
+[ext_resource type="PackedScene" uid="uid://dnpl2cf8kifqb" path="res://models/Semi_Circle_3.glb" id="10_wcbl8"]
+[ext_resource type="PackedScene" uid="uid://bl7jl1j315djv" path="res://models/Sylo_Large_1.glb" id="11_74jcy"]
+[ext_resource type="PackedScene" uid="uid://crax7mmmawwxi" path="res://models/Sylo_Large_2.glb" id="12_n8m0u"]
+[ext_resource type="PackedScene" uid="uid://b5m54cqm37qym" path="res://models/Sylo_Small_1.glb" id="13_46kpq"]
+[ext_resource type="PackedScene" uid="uid://de3p5r24fgkkl" path="res://models/Sylo_Small_2.glb" id="14_umw1r"]
+[ext_resource type="Texture2D" uid="uid://yiocm1rm6i88" path="res://texturas/dirt.png" id="15_5nr7i"]
+[ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="16_fvq46"]
+[ext_resource type="Texture2D" uid="uid://dqfbfnpnor7nq" path="res://PIXEL texture/chassi principal_BaseColor.png" id="17_xiuy5"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="18_he0t0"]
+[ext_resource type="Texture2D" uid="uid://d0c3sdautg2l4" path="res://PIXEL texture/chassi principal_BaseColorenemy2.png" id="19_lpj5f"]
+[ext_resource type="Texture2D" uid="uid://bl52crqqtr4hy" path="res://PIXEL texture/chassi principal_BaseColorenemy3.png" id="20_qsw0k"]
+[ext_resource type="Texture2D" uid="uid://c41q8r0ssrndm" path="res://PIXEL texture/chassi principal_BaseColorenemy.png" id="21_rwtcd"]
+[ext_resource type="Script" path="res://scripts/enemyAI.gd" id="22_c32q6"]
+[ext_resource type="PackedScene" uid="uid://blwrfv3yaxlsd" path="res://models/Teste/Barrel_1.glb" id="23_f35sx"]
+[ext_resource type="PackedScene" uid="uid://dn23n7rf6sw2x" path="res://models/Teste/Pipe Curved_1.glb" id="24_gwda3"]
+[ext_resource type="PackedScene" uid="uid://fgs2jk78p0s2" path="res://models/Teste/Pipe Curved_2.glb" id="25_6n5u0"]
+[ext_resource type="PackedScene" uid="uid://cn6aawnebie27" path="res://models/Teste/Pipe Straight 1.glb" id="26_uo02t"]
+[ext_resource type="PackedScene" uid="uid://v8kmhb6x7ldw" path="res://models/Teste/Pipe Straight 2.glb" id="27_en5rk"]
+[ext_resource type="PackedScene" uid="uid://ctmqr402dw3ls" path="res://models/Teste/Semi_Circle_1.glb" id="28_yldv8"]
+[ext_resource type="PackedScene" uid="uid://r5sena7u3wol" path="res://models/Teste/Semi_Circle_2.glb" id="29_iy5j6"]
+[ext_resource type="PackedScene" uid="uid://dt5s0o8n1okk" path="res://models/Teste/Semi_Circle_3.glb" id="30_frf8w"]
+[ext_resource type="PackedScene" uid="uid://cwsugxg6uyh1g" path="res://models/Teste/Stair_Begnning_1.glb" id="31_0l5mu"]
+[ext_resource type="PackedScene" uid="uid://qlmhtiw0rmk1" path="res://models/Teste/Stair_Begnning_2.glb" id="32_ff4bd"]
+[ext_resource type="PackedScene" uid="uid://bj6f8q5mgcpnb" path="res://models/Teste/Stair_middle_1.glb" id="33_mhmr1"]
+[ext_resource type="PackedScene" uid="uid://crwaf6r6kcbpw" path="res://models/Teste/Stair_middle_2.glb" id="34_vokoy"]
+[ext_resource type="PackedScene" uid="uid://bnpjuh4wwr27o" path="res://models/Teste/Structure_Connection.glb" id="35_76a4c"]
+[ext_resource type="PackedScene" uid="uid://yu4stfpiyukx" path="res://models/Teste/Structure_Linear_1.glb" id="36_34j8y"]
+[ext_resource type="PackedScene" uid="uid://cokm7ju1l8xfo" path="res://models/Teste/Structure_Linear_2.glb" id="37_kl32j"]
+[ext_resource type="PackedScene" uid="uid://b45ur2v1as5hs" path="res://models/Teste/Structure_Linear_3.glb" id="38_j7nds"]
+[ext_resource type="PackedScene" uid="uid://b4lybms08sqi6" path="res://models/Teste/Sylo_Large_1.glb" id="39_4iwa5"]
+[ext_resource type="PackedScene" uid="uid://b5r3nt51ly8a7" path="res://models/Teste/Sylo_Large_2.glb" id="40_fpk42"]
+[ext_resource type="PackedScene" uid="uid://b23gosfpv61lw" path="res://models/Teste/Sylo_Small_1.glb" id="41_axfy4"]
+[ext_resource type="PackedScene" uid="uid://cvyj4npvojfvv" path="res://models/Teste/Sylo_Small_2.glb" id="42_f6s78"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bd5dm"]
+sky_top_color = Color(0, 0.479349, 0.705601, 1)
+sky_horizon_color = Color(4.62055e-06, 0.75839, 0.675317, 1)
+
+[sub_resource type="Sky" id="Sky_d0m3a"]
+sky_material = SubResource("ProceduralSkyMaterial_bd5dm")
+
+[sub_resource type="Environment" id="Environment_565dx"]
+background_mode = 2
+sky = SubResource("Sky_d0m3a")
+tonemap_mode = 2
+glow_enabled = true
+fog_light_color = Color(0.517647, 0.882353, 0.607843, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.3036, 0.46, 0.3036, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nc7ia"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p8n8q"]
+size = Vector3(20, 10, 20)
+
+[sub_resource type="Curve3D" id="Curve3D_8i7f3"]
+_data = {
+"points": PackedVector3Array(0.175564, 0, -9.44551, -0.175564, 0, 9.44551, -0.167936, 0, 0.855, 0, 0, 0, 0, 0, 0, -1.46197, 0, 101.136, 0, 0, 0, 0, 0, 0, -2.87304, 0, 210.487, 0, 0, 0, 0, 0, 0, -3.87168, 0, 341.097, -12.6392, 0, -38.0669, 12.6392, 0, 38.0669, 11.462, 0, 441.071, -29.2757, 0, -6.849, 29.2757, 0, 6.849, 78.0429, 0, 515.885, -59.8416, 0, 2.85162, 59.8416, 0, -2.85162, 195.519, 0, 533.932, 0, 0, 0, 0, 0, 0, 294.557, 0, 523.262, -27.1064, 0, 20.4705, 27.1064, 0, -20.4705, 389.442, 0, 493.882, -1.26581, 0, 17.2722, 1.26581, 0, -17.2722, 440.238, 0, 414.282, -0.0169678, 0, 65.0848, 0.0169678, 0, -65.0848, 436.952, 0, 306.421, 0.330536, 0, 73.0836, -0.330536, 0, -73.0836, 418.759, 0, 136.618, 0, 0, 0, 0, 0, 0, 381.738, 0, 25.8104, 3.41675, 0, 43.7815, -3.41675, 0, -43.7815, 336.563, 0, -66.7053, -12.5186, 0, 17.7684, 12.5186, 0, -17.7684, 376.281, 0, -167.805, -27.3139, 0, 46.0282, 27.3139, 0, -46.0282, 433.882, 0, -257.447, -11.0515, 0, 31.7803, 11.0515, 0, -31.7803, 495.142, 0, -388.87, 5.84302, 0, 54.0018, -5.84302, 0, -54.0018, 526.413, 0, -528.633, 30.2402, 0, 27.6935, -30.2402, 0, -27.6935, 457.539, 0, -694.381, 41.7941, 0, 0.998413, -41.7941, 0, -0.998413, 316.369, 0, -768.935, 19.648, 0, -7.98529, -19.648, 0, 7.98529, 218.163, 0, -755.46, 26.7188, 0, -22.5333, -26.7188, 0, 22.5333, 118.371, 0, -696.853, 15.7417, 0, -22.3627, -15.7417, 0, 22.3627, 55.3099, 0, -618.578, 2.21531, 0, -9.70554, -2.21531, 0, 9.70554, 0.824, 0, -503.899, -0.876849, 0, -18.0214, 0.876849, 0, 18.0214, -7.09257, 0, -441.55, -28.5194, 0, -32.9756, 28.5194, 0, 32.9756, 17.0472, 0, -384.08, -22.3606, 0, -3.82217, 22.3606, 0, 3.82217, 75.2448, 0, -353.82, -9.72821, 0, -22.8648, 9.72821, 0, 22.8648, 126.927, 0, -312.831, 6.67079, 0, -19.5437, -6.67079, 0, 19.5437, 115.79, 0, -240.302, 0, 0, 0, 0, 0, 0, 73.7047, 0, -161.27, 0, 0, 0, 0, 0, 0, 30.8836, 0, -72.5436, -0.922996, 0, -16.529, 0.922996, 0, 16.529, -0.144, 0, 0.967),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g87kq"]
+albedo_texture = ExtResource("2_8ooqr")
+uv1_scale = Vector3(-0.255, 4, 4)
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2pch"]
+diffuse_mode = 3
+albedo_texture = ExtResource("15_5nr7i")
+metallic_specular = 0.0
+uv1_scale = Vector3(42, 42, 42)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lq21v"]
+material = SubResource("StandardMaterial3D_v2pch")
+size = Vector2(2000, 2000)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_565dx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_nc7ia")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 159.2, -2.5, 0)
+shape = SubResource("BoxShape3D_p8n8q")
+
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("1_65af0")]
+follow_target = NodePath("../racers/car")
+rotation_damping = 10.0
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_8i7f3")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(-13, 0, 0, 0.1, 13, 0.1, 4, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 10.0
+path_joined = false
+material = SubResource("StandardMaterial3D_g87kq")
+
+[node name="racemanager" type="Node" parent="." node_paths=PackedStringArray("racerstobe", "path")]
+unique_name_in_owner = true
+script = ExtResource("3_nixuq")
+racerstobe = NodePath("../racers")
+path = NodePath("../Path3D")
+
+[node name="scenery" type="Node3D" parent="."]
+
+[node name="Pipe_Curved_1" parent="scenery" instance=ExtResource("4_7fcsm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6307, 0, 45)
+
+[node name="Pipe_Curved_2" parent="scenery" instance=ExtResource("5_at2i0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4426, 0, 45)
+
+[node name="Pipe_Straight_1" parent="scenery" instance=ExtResource("6_wrbyc")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 20.26, 5.86051, 83.57)
+
+[node name="Pipe_Straight_2" parent="scenery" instance=ExtResource("7_5lmp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72286, 11.418, 45)
+
+[node name="Semi_Circle_12" parent="scenery" instance=ExtResource("8_qvjaa")]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, -39.182, 2.39214, 108.087)
+
+[node name="Semi_Circle_22" parent="scenery" instance=ExtResource("9_5e1c0")]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, -35.1659, 7.72517, 75.5791)
+
+[node name="Semi_Circle_32" parent="scenery" instance=ExtResource("10_wcbl8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.7065, 3.8147e-06, 154.851)
+
+[node name="Sylo_Large_12" parent="scenery" instance=ExtResource("11_74jcy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9854, 0, 116.067)
+
+[node name="Sylo_Large_22" parent="scenery" instance=ExtResource("12_n8m0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5549, -3.8147e-06, 149.107)
+
+[node name="Sylo_Small_12" parent="scenery" instance=ExtResource("13_46kpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9778, 0, 79.5596)
+
+[node name="Sylo_Small_22" parent="scenery" instance=ExtResource("14_umw1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5311, 3.8147e-06, 172.085)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("PlaneMesh_lq21v")
+skeleton = NodePath("../..")
+
+[node name="racers" type="Node3D" parent="."]
+
+[node name="car" parent="racers" instance=ExtResource("16_fvq46")]
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("17_xiuy5")])
+
+[node name="PlayerController" type="Node" parent="racers/car"]
+script = ExtResource("18_he0t0")
+
+[node name="car2" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466, 0, 0)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car2"]
+script = ExtResource("22_c32q6")
+carname = "Your Parting Thoughts"
+
+[node name="car3" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.134, 0, 0)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car3"]
+script = ExtResource("22_c32q6")
+carname = "Chase the sun"
+
+[node name="car4" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.234, 0, 0)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car4"]
+script = ExtResource("22_c32q6")
+carname = "Back by Popular Demand"
+
+[node name="car5" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.766, 0, 0)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car5"]
+script = ExtResource("22_c32q6")
+carname = "Love After Death"
+
+[node name="car6" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car6"]
+script = ExtResource("22_c32q6")
+carname = "Spoiler Alert"
+
+[node name="car7" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.134, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car7"]
+script = ExtResource("22_c32q6")
+carname = "Positive Deviance"
+
+[node name="car8" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.234, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car8"]
+script = ExtResource("22_c32q6")
+carname = "Machine Unworthy"
+
+[node name="car9" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.766, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car9"]
+script = ExtResource("22_c32q6")
+carname = "Radiant Suicide"
+
+[node name="car10" parent="racers" instance=ExtResource("16_fvq46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_lpj5f"), ExtResource("20_qsw0k"), ExtResource("21_rwtcd")])
+
+[node name="enemyController" type="Node" parent="racers/car10"]
+script = ExtResource("22_c32q6")
+carname = "Future Crime Scene"
+
+[node name="Barrel_12" parent="." instance=ExtResource("23_f35sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4289, 0, 22.0849)
+
+[node name="Pipe Curved_12" parent="." instance=ExtResource("24_gwda3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8195, 0, 29.2526)
+
+[node name="Pipe Curved_22" parent="." instance=ExtResource("25_6n5u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.2294, -1.90735e-06, 27.9068)
+
+[node name="Pipe Straight 12" parent="." instance=ExtResource("26_uo02t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1792, 5.38205, 15.6628)
+
+[node name="Pipe Straight 22" parent="." instance=ExtResource("27_en5rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.5213, 6.07555, 3.07566)
+
+[node name="Semi_Circle_12" parent="." instance=ExtResource("28_yldv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6262, 6.37301, -6.42055)
+
+[node name="Semi_Circle_22" parent="." instance=ExtResource("29_iy5j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8997, 2.57787, -26.1021)
+
+[node name="Semi_Circle_32" parent="." instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.45, 0.973341, 9.35294)
+
+[node name="Stair_Begnning_12" parent="." instance=ExtResource("31_0l5mu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8126, 0, -6.29202)
+
+[node name="Stair_Begnning_22" parent="." instance=ExtResource("32_ff4bd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.7217, 0, 11.7078)
+
+[node name="Stair_middle_12" parent="." instance=ExtResource("33_mhmr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5444, -1.90735e-06, 23.7906)
+
+[node name="Stair_middle_22" parent="." instance=ExtResource("34_vokoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.217, 0, 35.2662)
+
+[node name="Structure_Connection2" parent="." instance=ExtResource("35_76a4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.076, 1.90735e-06, 48.1339)
+
+[node name="Structure_Linear_12" parent="." instance=ExtResource("36_34j8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.521, 0, 106.376)
+
+[node name="Structure_Linear_22" parent="." instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.399, 0, 211.647)
+
+[node name="Structure_Linear_32" parent="." instance=ExtResource("38_j7nds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.619, 0, 273.205)
+
+[node name="Sylo_Large_12" parent="." instance=ExtResource("39_4iwa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.909, 0, 341.336)
+
+[node name="Sylo_Large_22" parent="." instance=ExtResource("40_fpk42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.979, 0, 370.861)
+
+[node name="Sylo_Small_12" parent="." instance=ExtResource("41_axfy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.1626, 0, 324.043)
+
+[node name="Sylo_Small_22" parent="." instance=ExtResource("42_f6s78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.8623, 0, 348.324)
