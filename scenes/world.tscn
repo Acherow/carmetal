@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://djuogaauu2o05"]
+[gd_scene load_steps=28 format=3 uid="uid://djuogaauu2o05"]
 
 [ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="1_fxqgc"]
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_m7ru0"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://crax7mmmawwxi" path="res://ASSETS/Sylo_Large_2.glb" id="12_1sr4s"]
 [ext_resource type="PackedScene" uid="uid://b5m54cqm37qym" path="res://ASSETS/Sylo_Small_1.glb" id="13_hwek7"]
 [ext_resource type="PackedScene" uid="uid://de3p5r24fgkkl" path="res://ASSETS/Sylo_Small_2.glb" id="14_vsxmm"]
+[ext_resource type="Texture2D" uid="uid://yiocm1rm6i88" path="res://texturas/dirt.png" id="15_62jpx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bd5dm"]
 sky_top_color = Color(0, 0.479349, 0.705601, 1)
@@ -53,10 +54,12 @@ texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2pch"]
 diffuse_mode = 3
-albedo_color = Color(0.8, 0.691467, 0.208, 1)
+albedo_texture = ExtResource("15_62jpx")
 metallic_specular = 0.0
+uv1_scale = Vector3(42, 42, 42)
+texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_flwbk"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_lq21v"]
 material = SubResource("StandardMaterial3D_v2pch")
 size = Vector2(2000, 2000)
 
@@ -142,7 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5311, 3.8147e-06, 172.085)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="scenery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-mesh = SubResource("PlaneMesh_flwbk")
+mesh = SubResource("PlaneMesh_lq21v")
 skeleton = NodePath("../..")
 
 [node name="racers" type="Node3D" parent="."]
