@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csxer1tfyna50"
-path="res://.godot/imported/Pipe_Straight_2.glb-1c3037f9a3a557b53f9319b149c29d7e.scn"
+uid="uid://b35ip43ee7rdx"
+path="res://.godot/imported/Pipe_Curved_1.glb-48db6289598a2b732892f9f2859ebf41.scn"
 
 [deps]
 
-source_file="res://ASSETS/Pipe_Straight_2.glb"
-dest_files=["res://.godot/imported/Pipe_Straight_2.glb-1c3037f9a3a557b53f9319b149c29d7e.scn"]
+source_file="res://models/Pipe_Curved_1.glb"
+dest_files=["res://.godot/imported/Pipe_Curved_1.glb-48db6289598a2b732892f9f2859ebf41.scn"]
 
 [params]
 

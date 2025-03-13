@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnpl2cf8kifqb"
-path="res://.godot/imported/Semi_Circle_3.glb-1e82da9db1eb230842fbe50f0058964a.scn"
+uid="uid://b5m54cqm37qym"
+path="res://.godot/imported/Sylo_Small_1.glb-fc8da297b249a49a94efe6f737400a34.scn"
 
 [deps]
 
-source_file="res://ASSETS/Semi_Circle_3.glb"
-dest_files=["res://.godot/imported/Semi_Circle_3.glb-1e82da9db1eb230842fbe50f0058964a.scn"]
+source_file="res://models/Sylo_Small_1.glb"
+dest_files=["res://.godot/imported/Sylo_Small_1.glb-fc8da297b249a49a94efe6f737400a34.scn"]
 
 [params]
 

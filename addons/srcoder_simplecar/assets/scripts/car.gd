@@ -37,7 +37,7 @@ var player_boost : bool = false
 
 
 @export var textures : Array[Texture2D]
-var on : bool = true
+var on : bool = false
 
 func _ready() -> void:
 	var mat :StandardMaterial3D= chassi.get_surface_override_material(0).duplicate()
@@ -108,8 +108,9 @@ func going_forward() -> bool:
 
 var previouspeed : Vector3
 func collisionentered(body):
-	if(body is car):
-		if(linear_velocity <= body.linear_velocity):
-			health -= (linear_velocity.length() - body.linear_velocity.length())
-	else:
-		health -= (previouspeed.length() - linear_velocity.length())
+	if(body is StaticBody3D):
+		return
+	
+	var damage = body.linear_velocity.length()
+	health -= damage
+	boost += damage

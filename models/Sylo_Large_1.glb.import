@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://o5ggnxautrhi"
-path="res://.godot/imported/Pipe_Straight_1.glb-11090f100c541a9c642013b260033e5a.scn"
+uid="uid://bl7jl1j315djv"
+path="res://.godot/imported/Sylo_Large_1.glb-af5cef7180b0408f1f5c6d978ee10b1a.scn"
 
 [deps]
 
-source_file="res://ASSETS/Pipe_Straight_1.glb"
-dest_files=["res://.godot/imported/Pipe_Straight_1.glb-11090f100c541a9c642013b260033e5a.scn"]
+source_file="res://models/Sylo_Large_1.glb"
+dest_files=["res://.godot/imported/Sylo_Large_1.glb-af5cef7180b0408f1f5c6d978ee10b1a.scn"]
 
 [params]
 

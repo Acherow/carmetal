@@ -20,6 +20,7 @@ func _ready() -> void:
 	for index in path.curve.get_point_count():
 		checkpoints.append(path.curve.get_point_position(index))
 	
+	startrace()
 
 func _process(delta: float) -> void:
 	racers = racers.filter(func(a): return a.carobj != null)
@@ -42,6 +43,7 @@ func _process(delta: float) -> void:
 	allracers.append_array(racers)
 
 func startrace():
+	await get_tree().create_timer(3).timeout
 	for n in racers:
 		n.carobj.on = true
 
