@@ -702,6 +702,8 @@ shadow_mesh = SubResource("ArrayMesh_68q2y")
 physics_material_override = ExtResource("1_vukum")
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.2, 0.1)
+contact_monitor = true
+max_contacts_reported = 12
 script = ExtResource("1_ymx53")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -871,3 +873,5 @@ damping_relaxation = 0.7
 [node name="pneu4" type="MeshInstance3D" parent="WheelBackRight"]
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
+
+[connection signal="body_entered" from="." to="." method="collisionentered"]

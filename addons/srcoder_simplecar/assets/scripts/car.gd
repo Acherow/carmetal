@@ -43,6 +43,7 @@ func _ready() -> void:
 		wheel.wheel_friction_slip = rear_wheel_grip
 
 func _physics_process(delta: float) -> void:
+	previouspeed = linear_velocity
 	if(!Input.is_action_pressed("drift")):
 		var global_velocity: Vector3 = linear_velocity
 		var local_velocity = global_basis.inverse() * global_velocity
@@ -58,8 +59,8 @@ func _physics_process(delta: float) -> void:
 	for wheel in frontwheels:
 		#linearly reduce engine force based on the wheels current rpm and the player input
 		var actual_force : float = player_acceleration * ((-max_torque/max_wheel_rpm) * abs(wheel.get_rpm()) + max_torque) 
-		wheel.engine_force = actual_force * (1 if !player_boost else 3)
-	if(player_boost):
+		wheel.engine_force = actual_force * (1 if (!player_boost||boost <= 0) else 3)
+	if(player_boost && boost >= 0):
 		boost -= delta
 
 func get_input(delta : float):
@@ -97,4 +98,11 @@ func going_forward() -> bool:
 		return true
 	else:
 		return false
-	
+
+var previouspeed : Vector3
+func collisionentered(body):
+	if(body is car):
+		if(linear_velocity <= body.linear_velocity):
+			health -= (linear_velocity.length() - body.linear_velocity.length())
+	else:
+		health -= (previouspeed.length() - linear_velocity.length())

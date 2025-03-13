@@ -32,7 +32,7 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("2_mw68o")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/TextureRect"]
+[node name="nitrobar" type="TextureProgressBar" parent="CanvasLayer/TextureRect"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -48,7 +48,7 @@ texture_progress = ExtResource("3_hv1g7")
 tint_progress = Color(0, 0.9, 1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="CanvasLayer/TextureRect"]
+[node name="healthbar" type="TextureProgressBar" parent="CanvasLayer/TextureRect"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
