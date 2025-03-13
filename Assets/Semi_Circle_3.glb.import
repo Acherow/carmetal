@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dnpl2cf8kifqb"
-path="res://.godot/imported/Semi_Circle_3.glb-0c8614a21a06b00dcf5fa74fe0746431.scn"
+path="res://.godot/imported/Semi_Circle_3.glb-1e82da9db1eb230842fbe50f0058964a.scn"
 
 [deps]
 
-source_file="res://Assets/Semi_Circle_3.glb"
-dest_files=["res://.godot/imported/Semi_Circle_3.glb-0c8614a21a06b00dcf5fa74fe0746431.scn"]
+source_file="res://ASSETS/Semi_Circle_3.glb"
+dest_files=["res://.godot/imported/Semi_Circle_3.glb-1e82da9db1eb230842fbe50f0058964a.scn"]
 
 [params]
 

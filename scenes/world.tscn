@@ -1,12 +1,22 @@
-[gd_scene load_steps=17 format=3 uid="uid://djuogaauu2o05"]
+[gd_scene load_steps=27 format=3 uid="uid://djuogaauu2o05"]
 
 [ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="1_fxqgc"]
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_m7ru0"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_se1mj"]
 [ext_resource type="Script" path="res://scripts/enemyAI.gd" id="3_kcsnn"]
 [ext_resource type="Texture2D" uid="uid://cjseyimrkxxax" path="res://road.png" id="4_1hrhv"]
+[ext_resource type="PackedScene" uid="uid://b35ip43ee7rdx" path="res://ASSETS/Pipe_Curved_1.glb" id="4_hypyi"]
 [ext_resource type="Script" path="res://scripts/race_manager.gd" id="5_6lhsm"]
-[ext_resource type="PackedScene" uid="uid://ca5emaqwyvfoy" path="res://TesteCena.tscn" id="7_f1xct"]
+[ext_resource type="PackedScene" uid="uid://x8nlt5sf1etu" path="res://ASSETS/Pipe_Curved_2.glb" id="5_jdwun"]
+[ext_resource type="PackedScene" uid="uid://o5ggnxautrhi" path="res://ASSETS/Pipe_Straight_1.glb" id="6_dcqyw"]
+[ext_resource type="PackedScene" uid="uid://csxer1tfyna50" path="res://ASSETS/Pipe_Straight_2.glb" id="7_p8w6m"]
+[ext_resource type="PackedScene" uid="uid://d30661gspbv1d" path="res://ASSETS/Semi_Circle_1.glb" id="8_frc8m"]
+[ext_resource type="PackedScene" uid="uid://jmqs7ard4iuj" path="res://ASSETS/Semi_Circle_2.glb" id="9_pv662"]
+[ext_resource type="PackedScene" uid="uid://dnpl2cf8kifqb" path="res://ASSETS/Semi_Circle_3.glb" id="10_cv3s4"]
+[ext_resource type="PackedScene" uid="uid://bl7jl1j315djv" path="res://ASSETS/Sylo_Large_1.glb" id="11_la1qw"]
+[ext_resource type="PackedScene" uid="uid://crax7mmmawwxi" path="res://ASSETS/Sylo_Large_2.glb" id="12_1sr4s"]
+[ext_resource type="PackedScene" uid="uid://b5m54cqm37qym" path="res://ASSETS/Sylo_Small_1.glb" id="13_hwek7"]
+[ext_resource type="PackedScene" uid="uid://de3p5r24fgkkl" path="res://ASSETS/Sylo_Small_2.glb" id="14_vsxmm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bd5dm"]
 sky_top_color = Color(0, 0.479349, 0.705601, 1)
@@ -69,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 
 shape = SubResource("BoxShape3D_p8n8q")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_m7ru0")]
-follow_target = NodePath("../Node3D2/car")
+follow_target = NodePath("../racers/car")
 rotation_damping = 10.0
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -89,32 +99,65 @@ path_u_distance = 10.0
 path_joined = false
 material = SubResource("StandardMaterial3D_g87kq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-mesh = SubResource("PlaneMesh_flwbk")
-
 [node name="racemanager" type="Node" parent="." node_paths=PackedStringArray("racerstobe", "path")]
 unique_name_in_owner = true
 script = ExtResource("5_6lhsm")
-racerstobe = NodePath("../Node3D2")
+racerstobe = NodePath("../racers")
 path = NodePath("../Path3D")
 
-[node name="Node3D" parent="." instance=ExtResource("7_f1xct")]
+[node name="scenery" type="Node3D" parent="."]
 
-[node name="Node3D2" type="Node3D" parent="."]
+[node name="Pipe_Curved_1" parent="scenery" instance=ExtResource("4_hypyi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6307, 0, 45)
 
-[node name="car" parent="Node3D2" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3924, 0)
+[node name="Pipe_Curved_2" parent="scenery" instance=ExtResource("5_jdwun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4426, 0, 45)
+
+[node name="Pipe_Straight_1" parent="scenery" instance=ExtResource("6_dcqyw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 20.26, 5.86051, 83.57)
+
+[node name="Pipe_Straight_2" parent="scenery" instance=ExtResource("7_p8w6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72286, 11.418, 45)
+
+[node name="Semi_Circle_12" parent="scenery" instance=ExtResource("8_frc8m")]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, -39.182, 2.39214, 108.087)
+
+[node name="Semi_Circle_22" parent="scenery" instance=ExtResource("9_pv662")]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, -35.1659, 7.72517, 75.5791)
+
+[node name="Semi_Circle_32" parent="scenery" instance=ExtResource("10_cv3s4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.7065, 3.8147e-06, 154.851)
+
+[node name="Sylo_Large_12" parent="scenery" instance=ExtResource("11_la1qw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9854, 0, 116.067)
+
+[node name="Sylo_Large_22" parent="scenery" instance=ExtResource("12_1sr4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5549, -3.8147e-06, 149.107)
+
+[node name="Sylo_Small_12" parent="scenery" instance=ExtResource("13_hwek7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9778, 0, 79.5596)
+
+[node name="Sylo_Small_22" parent="scenery" instance=ExtResource("14_vsxmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5311, 3.8147e-06, 172.085)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("PlaneMesh_flwbk")
+skeleton = NodePath("../..")
+
+[node name="racers" type="Node3D" parent="."]
+
+[node name="car" parent="racers" instance=ExtResource("1_fxqgc")]
 linear_damp = 0.5
 angular_damp = 2.0
 
-[node name="PlayerController" type="Node" parent="Node3D2/car"]
+[node name="PlayerController" type="Node" parent="racers/car"]
 script = ExtResource("2_se1mj")
 
-[node name="car2" parent="Node3D2" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46578, 0, 5.58116)
+[node name="car2" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466, 0, 0)
 linear_damp = 0.5
 angular_damp = 2.0
 
-[node name="enemyController" type="Node" parent="Node3D2/car2"]
+[node name="enemyController" type="Node" parent="racers/car2"]
 script = ExtResource("3_kcsnn")

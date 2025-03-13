@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b35ip43ee7rdx"
-path="res://.godot/imported/Pipe_Curved_1.glb-b719d1f9102ed53a14129950340e0323.scn"
+path="res://.godot/imported/Pipe_Curved_1.glb-9ef68a631fbfd115ff79671acb3a8986.scn"
 
 [deps]
 
-source_file="res://Assets/Pipe_Curved_1.glb"
-dest_files=["res://.godot/imported/Pipe_Curved_1.glb-b719d1f9102ed53a14129950340e0323.scn"]
+source_file="res://ASSETS/Pipe_Curved_1.glb"
+dest_files=["res://.godot/imported/Pipe_Curved_1.glb-9ef68a631fbfd115ff79671acb3a8986.scn"]
 
 [params]
 

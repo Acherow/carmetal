@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bl7jl1j315djv"
-path="res://.godot/imported/Sylo_Large_1.glb-43be92d41cfb677545f59f99ea8165c6.scn"
+path="res://.godot/imported/Sylo_Large_1.glb-39ee500612d9694d514e8716eafe2261.scn"
 
 [deps]
 
-source_file="res://Assets/Sylo_Large_1.glb"
-dest_files=["res://.godot/imported/Sylo_Large_1.glb-43be92d41cfb677545f59f99ea8165c6.scn"]
+source_file="res://ASSETS/Sylo_Large_1.glb"
+dest_files=["res://.godot/imported/Sylo_Large_1.glb-39ee500612d9694d514e8716eafe2261.scn"]
 
 [params]
 
