@@ -704,13 +704,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_68q2y")
 
-[node name="car" type="VehicleBody3D"]
+[node name="car" type="VehicleBody3D" node_paths=PackedStringArray("backwheels", "frontwheels")]
 physics_material_override = ExtResource("1_vukum")
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.2, 0.1)
 contact_monitor = true
 max_contacts_reported = 12
 script = ExtResource("1_ymx53")
+backwheels = [NodePath("WheelBackRight"), NodePath("WheelBackLeft")]
+frontwheels = [NodePath("WheelFrontLeft"), NodePath("WheelFrontRight")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870654, 0)

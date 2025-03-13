@@ -3,6 +3,7 @@ extends Node
 @export var maxlaps : int = 3
 
 @export var racerstobe : Node3D
+@export var trucks : Array[car]
 
 var racers : Array[carinfo]
 var allracers : Array[carinfo]
@@ -46,6 +47,8 @@ func startrace():
 	await get_tree().create_timer(3).timeout
 	for n in racers:
 		n.carobj.on = true
+	for n in trucks:
+		n.on = true
 
 func checkplacement(racer : carinfo):
 	var index = 0

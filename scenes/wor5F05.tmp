@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://djuogaauu2o05"]
+[gd_scene load_steps=33 format=3 uid="uid://djuogaauu2o05"]
 
 [ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="1_fxqgc"]
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_m7ru0"]
@@ -68,10 +68,6 @@ texture_filter = 0
 material = SubResource("StandardMaterial3D_v2pch")
 size = Vector2(2000, 2000)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_s47yv"]
-height = 10.0
-radius = 3.0
-
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -92,8 +88,6 @@ shape = SubResource("BoxShape3D_p8n8q")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_m7ru0")]
 follow_target = NodePath("../racers/car")
-camera_height = 5.0
-camera_distance = 10.0
 rotation_damping = 10.0
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -117,10 +111,10 @@ material = SubResource("StandardMaterial3D_g87kq")
 unique_name_in_owner = true
 script = ExtResource("5_6lhsm")
 racerstobe = NodePath("../racers")
-trucks = [NodePath("../Truck"), NodePath("../Truck2"), NodePath("../Truck3"), NodePath("../Truck4"), NodePath("../Truck5"), NodePath("../Truck6")]
+trucks = [NodePath("../Truck")]
 path = NodePath("../Path3D")
 
-[node name="scenery" type="StaticBody3D" parent="."]
+[node name="scenery" type="Node3D" parent="."]
 
 [node name="Pipe_Curved_1" parent="scenery" instance=ExtResource("4_hypyi")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6307, 0, 45)
@@ -160,27 +154,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("PlaneMesh_lq21v")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 4.8, 45.1)
-shape = SubResource("CylinderShape3D_s47yv")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5046, 4.8, 45.1)
-shape = SubResource("CylinderShape3D_s47yv")
-
 [node name="racers" type="Node3D" parent="."]
 
 [node name="car" parent="racers" instance=ExtResource("1_fxqgc")]
 linear_damp = 0.5
 angular_damp = 2.0
-max_torque = 580.0
+max_torque = 500.0
 textures = Array[Texture2D]([ExtResource("17_v5giy")])
 
 [node name="PlayerController" type="Node" parent="racers/car"]
 script = ExtResource("2_se1mj")
 
 [node name="car2" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.52023, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466, 0, 0)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -190,7 +176,7 @@ script = ExtResource("3_kcsnn")
 carname = "Your Parting Thoughts"
 
 [node name="car3" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76104, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.134, 0, 0)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -200,7 +186,7 @@ script = ExtResource("3_kcsnn")
 carname = "Chase the sun"
 
 [node name="car4" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3238, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.234, 0, 0)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -210,7 +196,7 @@ script = ExtResource("3_kcsnn")
 carname = "Back by Popular Demand"
 
 [node name="car5" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3465, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.766, 0, 0)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -220,7 +206,7 @@ script = ExtResource("3_kcsnn")
 carname = "Love After Death"
 
 [node name="car6" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10432, 0, -10.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466, 0, -5.9)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -230,7 +216,7 @@ script = ExtResource("3_kcsnn")
 carname = "Spoiler Alert"
 
 [node name="car7" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.40312, 0, -10.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.134, 0, -5.9)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -240,7 +226,7 @@ script = ExtResource("3_kcsnn")
 carname = "Positive Deviance"
 
 [node name="car8" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8821, 2.86102e-06, -10.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.234, 0, -5.9)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -250,7 +236,7 @@ script = ExtResource("3_kcsnn")
 carname = "Machine Unworthy"
 
 [node name="car9" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.519, 0, -10.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.766, 0, -5.9)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -260,7 +246,7 @@ script = ExtResource("3_kcsnn")
 carname = "Radiant Suicide"
 
 [node name="car10" parent="racers" instance=ExtResource("1_fxqgc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, 0, -10.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, 0, -5.9)
 linear_damp = 0.5
 angular_damp = 2.0
 textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
@@ -270,19 +256,4 @@ script = ExtResource("3_kcsnn")
 carname = "Future Crime Scene"
 
 [node name="Truck" parent="." instance=ExtResource("23_g8qpx")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.66144, 3.8147e-06, 156.068)
-
-[node name="Truck2" parent="." instance=ExtResource("23_g8qpx")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.66144, 3.8147e-06, 278.368)
-
-[node name="Truck3" parent="." instance=ExtResource("23_g8qpx")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.261437, 3.8147e-06, 368.268)
-
-[node name="Truck4" parent="." instance=ExtResource("23_g8qpx")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 13.7386, 3.8147e-06, 247.168)
-
-[node name="Truck5" parent="." instance=ExtResource("23_g8qpx")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.3614, 3.8147e-06, 185.268)
-
-[node name="Truck6" parent="." instance=ExtResource("23_g8qpx")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.8386, 3.8147e-06, 107.868)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.66144, 3.8147e-06, 66.4678)
