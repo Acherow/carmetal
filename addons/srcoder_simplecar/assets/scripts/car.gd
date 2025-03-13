@@ -33,9 +33,16 @@ var player_boost : bool = false
 @onready var backwheels : Array[VehicleWheel3D] = [$WheelBackLeft,$WheelBackRight]
 @onready var frontwheels : Array[VehicleWheel3D] = [$WheelFrontLeft,$WheelFrontRight]
 
+@onready var chassi: MeshInstance3D = $"First Car/chassi principal"
+
+
+@export var textures : Array[Texture2D]
 var on : bool = true
 
 func _ready() -> void:
+	var mat :StandardMaterial3D= chassi.get_surface_override_material(0).duplicate()
+	mat.albedo_texture = textures.pick_random()
+	chassi.set_surface_override_material(0,mat)
 	#set wheel friction slip
 	for wheel in frontwheels:
 		wheel.wheel_friction_slip = front_wheel_grip

@@ -1,5 +1,6 @@
 extends Node
 
+@export var carname : String
 @export var avoidradius = 4
 
 var target : Vector3

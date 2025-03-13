@@ -1,9 +1,148 @@
-[gd_scene load_steps=5 format=3 uid="uid://rjx8tx5y7j2p"]
+[gd_scene load_steps=13 format=3 uid="uid://rjx8tx5y7j2p"]
 
 [ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/follow_camera.gd" id="1_1bo7l"]
 [ext_resource type="Texture2D" uid="uid://xqiwi3cktgrw" path="res://UI.png" id="2_mw68o"]
 [ext_resource type="Texture2D" uid="uid://dqwq8gwa2ftiv" path="res://fill1.png" id="3_hv1g7"]
 [ext_resource type="Texture2D" uid="uid://b0v03ctdlv23x" path="res://fill2.png" id="4_pm7so"]
+[ext_resource type="Texture2D" uid="uid://uli06md6oesn" path="res://lights/base.png" id="5_flwjf"]
+[ext_resource type="Texture2D" uid="uid://18ue2bp04av3" path="res://lights/wires.png" id="6_nb26d"]
+[ext_resource type="Texture2D" uid="uid://dmqcbkicge0gv" path="res://lights/light1.png" id="7_5lgci"]
+[ext_resource type="Texture2D" uid="uid://dgwta148cm3he" path="res://lights/light2.png" id="8_ukfxo"]
+[ext_resource type="Texture2D" uid="uid://bp6asbwpltlot" path="res://lights/light3.png" id="9_8jwjq"]
+
+[sub_resource type="Animation" id="Animation_r1fp0"]
+resource_name = "start"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 2.3, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(448, -218), Vector2(448, 0), Vector2(448, 0), Vector2(448, -211)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.49012e-08, 0.3, 0.6, 2.2, 2.3, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -34), Vector2(0, 11), Vector2(0, 0), Vector2(0, 0), Vector2(0, 11), Vector2(0, -28.4999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wires2:modulate")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 0), Color(1, 1, 0, 1), Color(0, 1, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wires3:modulate")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 0), Color(1, 1, 0, 1), Color(0, 1, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wires4:modulate")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 0), Color(0, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fkmpj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448, -218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -34)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wires2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wires3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wires4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djsus"]
+_data = {
+"RESET": SubResource("Animation_fkmpj"),
+"start": SubResource("Animation_r1fp0")
+}
 
 [node name="FollowCamera" type="Node3D"]
 script = ExtResource("1_1bo7l")
@@ -63,3 +202,73 @@ fill_mode = 3
 texture_progress = ExtResource("4_pm7so")
 tint_progress = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="wires" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = -218.0
+offset_right = 128.0
+offset_bottom = 38.0
+grow_horizontal = 2
+texture = ExtResource("6_nb26d")
+
+[node name="lights" type="TextureRect" parent="CanvasLayer/wires"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = -34.0
+offset_right = 128.0
+offset_bottom = 222.0
+grow_horizontal = 2
+texture = ExtResource("5_flwjf")
+
+[node name="wires2" type="TextureRect" parent="CanvasLayer/wires/lights"]
+modulate = Color(1, 1, 0, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 256.0
+grow_horizontal = 2
+texture = ExtResource("7_5lgci")
+
+[node name="wires3" type="TextureRect" parent="CanvasLayer/wires/lights"]
+modulate = Color(1, 1, 0, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 256.0
+grow_horizontal = 2
+texture = ExtResource("8_ukfxo")
+
+[node name="wires4" type="TextureRect" parent="CanvasLayer/wires/lights"]
+modulate = Color(1, 1, 0, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 256.0
+grow_horizontal = 2
+texture = ExtResource("9_8jwjq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/wires/lights"]
+libraries = {
+"": SubResource("AnimationLibrary_djsus")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/wires"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://7l1irinimxa"]
+[gd_scene load_steps=73 format=4 uid="uid://7l1irinimxa"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cuw7isymmyyku" path="res://addons/srcoder_simplecar/assets/materials/metal_physics_material.phymat" id="1_vukum"]
 [ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/car.gd" id="1_ymx53"]
@@ -59,6 +59,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3mf6j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40n57"]
+resource_name = "chassi principal"
+cull_mode = 2
+albedo_texture = ExtResource("3_g1ere")
+texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlq12"]
 resource_name = "aerofolio"
@@ -715,6 +721,7 @@ shape = SubResource("BoxShape3D_0g6d0")
 [node name="chassi principal" type="MeshInstance3D" parent="First Car"]
 mesh = SubResource("ArrayMesh_kmyi7")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_40n57")
 
 [node name="aerofolio" type="MeshInstance3D" parent="First Car/chassi principal"]
 transform = Transform3D(0.999994, -0.00299031, 0.00159636, 0.00299122, 0.999995, -0.000573431, -0.00159464, 0.000578195, 0.999999, 0, 1.67396, -1.02557)

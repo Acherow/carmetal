@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://djuogaauu2o05"]
+[gd_scene load_steps=32 format=3 uid="uid://djuogaauu2o05"]
 
 [ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="1_fxqgc"]
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_m7ru0"]
@@ -18,6 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://b5m54cqm37qym" path="res://ASSETS/Sylo_Small_1.glb" id="13_hwek7"]
 [ext_resource type="PackedScene" uid="uid://de3p5r24fgkkl" path="res://ASSETS/Sylo_Small_2.glb" id="14_vsxmm"]
 [ext_resource type="Texture2D" uid="uid://yiocm1rm6i88" path="res://texturas/dirt.png" id="15_62jpx"]
+[ext_resource type="Texture2D" uid="uid://dqfbfnpnor7nq" path="res://PIXEL texture/chassi principal_BaseColor.png" id="17_v5giy"]
+[ext_resource type="Texture2D" uid="uid://d0c3sdautg2l4" path="res://PIXEL texture/chassi principal_BaseColorenemy2.png" id="19_c7yee"]
+[ext_resource type="Texture2D" uid="uid://bl52crqqtr4hy" path="res://PIXEL texture/chassi principal_BaseColorenemy3.png" id="20_kth6j"]
+[ext_resource type="Texture2D" uid="uid://c41q8r0ssrndm" path="res://PIXEL texture/chassi principal_BaseColorenemy.png" id="21_oy5w6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bd5dm"]
 sky_top_color = Color(0, 0.479349, 0.705601, 1)
@@ -42,10 +46,10 @@ size = Vector3(20, 10, 20)
 
 [sub_resource type="Curve3D" id="Curve3D_8i7f3"]
 _data = {
-"points": PackedVector3Array(0.175564, 0, -9.44551, -0.175564, 0, 9.44551, -0.167936, 0, 0.855, 0, 0, 0, 0, 0, 0, -2.87304, 0, 210.487, -27.9628, 0, -87.6916, 27.9628, 0, 87.6916, 11.462, 0, 441.071, -59.8416, 0, 2.85162, 59.8416, 0, -2.85162, 195.519, 0, 533.932, -79.5566, 0, 33.7443, 79.5566, 0, -33.7443, 389.442, 0, 493.882, 0, 0, 0, 0, 0, 0, 436.952, 0, 306.421, 0.330536, 0, 73.0836, -0.330536, 0, -73.0836, 418.759, 0, 136.618, 17.6523, 0, 60.4705, -17.6523, 0, -60.4705, 336.563, 0, -66.7053, -66.2978, 0, 122.875, 66.2978, 0, -122.875, 433.882, 0, -257.447, 5.84302, 0, 54.0018, -5.84302, 0, -54.0018, 526.413, 0, -528.633, 148.669, 0, -1.609, -148.669, 0, 1.609, 316.369, 0, -768.935, 0, 0, 0, 0, 0, 0, 118.371, 0, -696.853, 13.1874, 0, -84.1694, -13.1874, 0, 84.1694, 0.824, 0, -503.899, -28.5194, 0, -32.9756, 28.5194, 0, 32.9756, 17.0472, 0, -384.08, -17.1917, 0, -46.2948, 17.1917, 0, 46.2948, 126.927, 0, -312.831, 0, 0, 0, 0, 0, 0, 73.7047, 0, -161.27, -0.922996, 0, -16.529, 0.922996, 0, 16.529, -0.144, 0, 0.967),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0.175564, 0, -9.44551, -0.175564, 0, 9.44551, -0.167936, 0, 0.855, 0, 0, 0, 0, 0, 0, -1.46197, 0, 101.136, 0, 0, 0, 0, 0, 0, -2.87304, 0, 210.487, 0, 0, 0, 0, 0, 0, -3.87168, 0, 341.097, -12.6392, 0, -38.0669, 12.6392, 0, 38.0669, 11.462, 0, 441.071, -29.2757, 0, -6.849, 29.2757, 0, 6.849, 78.0429, 0, 515.885, -59.8416, 0, 2.85162, 59.8416, 0, -2.85162, 195.519, 0, 533.932, 0, 0, 0, 0, 0, 0, 294.557, 0, 523.262, -27.1064, 0, 20.4705, 27.1064, 0, -20.4705, 389.442, 0, 493.882, -1.26581, 0, 17.2722, 1.26581, 0, -17.2722, 440.238, 0, 414.282, -0.0169678, 0, 65.0848, 0.0169678, 0, -65.0848, 436.952, 0, 306.421, 0.330536, 0, 73.0836, -0.330536, 0, -73.0836, 418.759, 0, 136.618, 0, 0, 0, 0, 0, 0, 381.738, 0, 25.8104, 3.41675, 0, 43.7815, -3.41675, 0, -43.7815, 336.563, 0, -66.7053, -12.5186, 0, 17.7684, 12.5186, 0, -17.7684, 376.281, 0, -167.805, -27.3139, 0, 46.0282, 27.3139, 0, -46.0282, 433.882, 0, -257.447, -11.0515, 0, 31.7803, 11.0515, 0, -31.7803, 495.142, 0, -388.87, 5.84302, 0, 54.0018, -5.84302, 0, -54.0018, 526.413, 0, -528.633, 30.2402, 0, 27.6935, -30.2402, 0, -27.6935, 457.539, 0, -694.381, 41.7941, 0, 0.998413, -41.7941, 0, -0.998413, 316.369, 0, -768.935, 19.648, 0, -7.98529, -19.648, 0, 7.98529, 218.163, 0, -755.46, 26.7188, 0, -22.5333, -26.7188, 0, 22.5333, 118.371, 0, -696.853, 15.7417, 0, -22.3627, -15.7417, 0, 22.3627, 55.3099, 0, -618.578, 2.21531, 0, -9.70554, -2.21531, 0, 9.70554, 0.824, 0, -503.899, -0.876849, 0, -18.0214, 0.876849, 0, 18.0214, -7.09257, 0, -441.55, -28.5194, 0, -32.9756, 28.5194, 0, 32.9756, 17.0472, 0, -384.08, -22.3606, 0, -3.82217, 22.3606, 0, 3.82217, 75.2448, 0, -353.82, -9.72821, 0, -22.8648, 9.72821, 0, 22.8648, 126.927, 0, -312.831, 6.67079, 0, -19.5437, -6.67079, 0, 19.5437, 115.79, 0, -240.302, 0, 0, 0, 0, 0, 0, 73.7047, 0, -161.27, 0, 0, 0, 0, 0, 0, 30.8836, 0, -72.5436, -0.922996, 0, -16.529, 0.922996, 0, 16.529, -0.144, 0, 0.967),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 17
+point_count = 32
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g87kq"]
 albedo_texture = ExtResource("4_1hrhv")
@@ -153,6 +157,7 @@ skeleton = NodePath("../..")
 [node name="car" parent="racers" instance=ExtResource("1_fxqgc")]
 linear_damp = 0.5
 angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("17_v5giy")])
 
 [node name="PlayerController" type="Node" parent="racers/car"]
 script = ExtResource("2_se1mj")
@@ -161,6 +166,88 @@ script = ExtResource("2_se1mj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466, 0, 0)
 linear_damp = 0.5
 angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
 
 [node name="enemyController" type="Node" parent="racers/car2"]
 script = ExtResource("3_kcsnn")
+carname = "Your Parting Thoughts"
+
+[node name="car3" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.134, 0, 0)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car3"]
+script = ExtResource("3_kcsnn")
+carname = "Chase the sun"
+
+[node name="car4" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.234, 0, 0)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car4"]
+script = ExtResource("3_kcsnn")
+carname = "Back by Popular Demand"
+
+[node name="car5" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.766, 0, 0)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car5"]
+script = ExtResource("3_kcsnn")
+carname = "Love After Death"
+
+[node name="car6" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car6"]
+script = ExtResource("3_kcsnn")
+carname = "Spoiler Alert"
+
+[node name="car7" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.134, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car7"]
+script = ExtResource("3_kcsnn")
+carname = "Positive Deviance"
+
+[node name="car8" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.234, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car8"]
+script = ExtResource("3_kcsnn")
+carname = "Machine Unworthy"
+
+[node name="car9" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.766, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car9"]
+script = ExtResource("3_kcsnn")
+carname = "Radiant Suicide"
+
+[node name="car10" parent="racers" instance=ExtResource("1_fxqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, 0, -5.9)
+linear_damp = 0.5
+angular_damp = 2.0
+textures = Array[Texture2D]([ExtResource("19_c7yee"), ExtResource("20_kth6j"), ExtResource("21_oy5w6")])
+
+[node name="enemyController" type="Node" parent="racers/car10"]
+script = ExtResource("3_kcsnn")
+carname = "Future Crime Scene"
