@@ -8,12 +8,12 @@ var boost : int = 100
 ## max steer in radians for the front wheels- defaults to 0.45
 var max_steer : float = .2
 ## the maximum torque that the engine will sent to the rear wheels- defaults to 300
-var max_torque : float = 600.0
+@export var max_torque : float = 600.0
 ## the maximum amount of braking force applied to the wheel. Default is 1.0
 var max_brake_force : float = 2.0
 ## the maximum rear wheel rpm. The actual engine torque is scaled in a linear vector to ensure the rear wheels will never go beyond this given rpm.
 ## The default value is 600rpm
-var max_wheel_rpm : float = 3000.0
+@export var max_wheel_rpm : float = 3000.0
 ## How sticky are the front wheels. Default is 5. 0 is frictionless._add_constant_central_force
 var front_wheel_grip : float = 30.0
 ## How sticky are the rear wheel. Default is 5. Try lower value for a more drift experience
@@ -30,8 +30,8 @@ var player_drift : bool = false
 var player_boost : bool = false
 
 #an exporetd array of driving wheels so we can limit rom of each wheel when we process input
-@onready var backwheels : Array[VehicleWheel3D] = [$WheelBackLeft,$WheelBackRight]
-@onready var frontwheels : Array[VehicleWheel3D] = [$WheelFrontLeft,$WheelFrontRight]
+@export var backwheels : Array[VehicleWheel3D]
+@export var frontwheels : Array[VehicleWheel3D]
 
 @onready var chassi: MeshInstance3D = $"First Car/chassi principal"
 
@@ -111,6 +111,8 @@ func collisionentered(body):
 	if(body is StaticBody3D):
 		return
 	
-	var damage = body.linear_velocity.length()
-	health -= damage
-	boost += damage
+	var damage = body.linear_velocity.length() - linear_velocity.length()
+	if(linear_velocity.length() < body.linear_velocity.length()):
+		health -= damage
+	else:
+		boost += damage

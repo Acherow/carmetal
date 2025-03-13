@@ -25,23 +25,18 @@ func _get_danger(target, origin, originoffset, range, raydirs) -> Array:
 		var params = PhysicsRayQueryParameters3D.create(origin.position + originoffset, 
 		origin.position + originoffset + raydirs[i].rotated(Vector3.UP, origin.rotation.y) * range, 0xFFFFFFFF, [origin])
 		var result = space.intersect_ray(params)
+		#print(origin, result)
 		if(result):
 			danger[i] = 1 - clampf(origin.position.distance_to(result.position) / range, 0.0, 1.0)
 		else:
-			params = PhysicsRayQueryParameters3D.create(origin.position + originoffset + 
-			raydirs[i].rotated(Vector3.UP, origin.rotation.y) * (range/2), origin.position + raydirs[i].rotated(Vector3.UP, origin.rotation.y) * (range/2) + Vector3.DOWN * (range * 2), 0xFFFFFFFF, [origin])
-			result = space.intersect_ray(params)
-			if(!result):
-				danger[i] = 1
-			else:
-				danger[i] = 0
+			danger[i] = 0
 	return danger
 
 func steering(raydirs, target, origin, originoffset, range):
 	var danger = _get_danger(target,origin,originoffset, range, raydirs)
 	var interest = _get_interest(target,origin, raydirs)
 	for i in raydirs.size():
-		if(danger[i] > 0):
+		if(danger[i] != null && danger[i] > 0):
 			interest[i] -= danger[i]
 		interest[i] = clampf(interest[i], 0, 1)
 	var chosen_dir = Vector3.ZERO

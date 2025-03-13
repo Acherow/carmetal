@@ -1,27 +1,36 @@
 extends Node
 
-@export var carname : String
-@export var avoidradius = 4
+@export var avoidradius = 1
 
 var target : Vector3
 var carobj : car
+
+var checkpoint : int = 0
+
+var path
 
 func _ready() -> void:
 	if(get_parent() is car):
 		carobj = get_parent()
 	else:
 		queue_free()
+	await get_tree().process_frame
+	path = get_tree().current_scene.get_node("%racemanager").checkpoints.duplicate()
+	path.reverse()
 
 func _process(delta: float) -> void:
+	if(path == null): return
+	
 	if(target && carobj.global_position.distance_to(target) > .1):
 		carobj.player_input = GetDirection(target)
 		#print(carobj.player_input)
 	else:
 		carobj.player_input = Vector2.ZERO
 	
-	if(%racemanager.getInfo(carobj) != null && %racemanager.getInfo(carobj).lap <= %racemanager.maxlaps):
-		target = %racemanager.checkpoints[(%racemanager.getInfo(carobj).checkpoint+1)% %racemanager.checkpoints.size()]
-	else: target = Vector3.ZERO
+	target = path[(checkpoint+1)%path.size()]
+	if(carobj.global_position.distance_to(path[checkpoint]) > carobj.global_position.distance_to(path[(checkpoint + 1) % path.size()])):
+		checkpoint = (checkpoint + 1) % path.size()
+	
 func GetDirection(pos : Vector3) -> Vector2:
 	var raydirs = []
 	raydirs.resize(8)
