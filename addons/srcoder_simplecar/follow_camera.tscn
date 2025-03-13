@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://rjx8tx5y7j2p"]
+[gd_scene load_steps=3 format=3 uid="uid://rjx8tx5y7j2p"]
 
 [ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/follow_camera.gd" id="1_1bo7l"]
+[ext_resource type="Texture2D" uid="uid://xqiwi3cktgrw" path="res://UI.png" id="2_mw68o"]
 
 [node name="FollowCamera" type="Node3D"]
 script = ExtResource("1_1bo7l")
@@ -13,3 +14,24 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="Pivot/SpringArm3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -251.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_mw68o")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 2

@@ -826,7 +826,6 @@ damping_compression = 0.5
 damping_relaxation = 0.7
 
 [node name="pneu" type="MeshInstance3D" parent="WheelFrontLeft"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
 
@@ -841,7 +840,6 @@ damping_compression = 0.5
 damping_relaxation = 0.7
 
 [node name="pneu2" type="MeshInstance3D" parent="WheelBackLeft"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
 
@@ -857,7 +855,6 @@ damping_compression = 0.5
 damping_relaxation = 0.7
 
 [node name="pneu3" type="MeshInstance3D" parent="WheelFrontRight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
 
