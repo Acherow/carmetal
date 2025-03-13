@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d0c3sdautg2l4" path="res://PIXEL texture/chassi principal_BaseColorenemy2.png" id="19_c7yee"]
 [ext_resource type="Texture2D" uid="uid://bl52crqqtr4hy" path="res://PIXEL texture/chassi principal_BaseColorenemy3.png" id="20_kth6j"]
 [ext_resource type="Texture2D" uid="uid://c41q8r0ssrndm" path="res://PIXEL texture/chassi principal_BaseColorenemy.png" id="21_oy5w6"]
-[ext_resource type="PackedScene" path="res://objects/truck.tscn" id="23_g8qpx"]
+[ext_resource type="PackedScene" uid="uid://l0ywxdjsxbbi" path="res://objects/truck.tscn" id="23_g8qpx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bd5dm"]
 sky_top_color = Color(0, 0.479349, 0.705601, 1)
@@ -122,16 +122,16 @@ path = NodePath("../Path3D")
 [node name="scenery" type="StaticBody3D" parent="."]
 
 [node name="Pipe_Curved_1" parent="scenery" instance=ExtResource("4_hypyi")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6307, 0, 45)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6307, 0, 12.13)
 
 [node name="Pipe_Curved_2" parent="scenery" instance=ExtResource("5_jdwun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4426, 0, 45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4426, 0, 12.13)
 
 [node name="Pipe_Straight_1" parent="scenery" instance=ExtResource("6_dcqyw")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 20.26, 5.86051, 83.57)
 
 [node name="Pipe_Straight_2" parent="scenery" instance=ExtResource("7_p8w6m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72286, 11.418, 45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72286, 11.418, 12.13)
 
 [node name="Semi_Circle_12" parent="scenery" instance=ExtResource("8_frc8m")]
 transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, -39.182, 2.39214, 108.087)
@@ -160,11 +160,11 @@ mesh = SubResource("PlaneMesh_lq21v")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 4.8, 45.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 4.8, 12.23)
 shape = SubResource("CylinderShape3D_s47yv")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5046, 4.8, 45.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5046, 4.8, 12.23)
 shape = SubResource("CylinderShape3D_s47yv")
 
 [node name="racers" type="Node3D" parent="."]

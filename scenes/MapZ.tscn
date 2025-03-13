@@ -128,57 +128,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("PlaneMesh_lq21v")
 skeleton = NodePath("../..")
 
-[node name="Barrel_12" parent="scenery" instance=ExtResource("23_f35sx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4289, 0, 22.0849)
-
-[node name="Pipe Straight 12" parent="scenery" instance=ExtResource("26_uo02t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.1792, 5.38205, 15.6628)
-
-[node name="Semi_Circle_12" parent="scenery" instance=ExtResource("28_yldv8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6262, 6.37301, -6.42055)
-
-[node name="Semi_Circle_22" parent="scenery" instance=ExtResource("29_iy5j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8997, 2.57787, -26.1021)
-
-[node name="Semi_Circle_32" parent="scenery" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.45, 0.973341, 9.35294)
-
-[node name="Stair_Begnning_12" parent="scenery" instance=ExtResource("31_0l5mu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8126, 0, -6.29202)
-
-[node name="Stair_Begnning_22" parent="scenery" instance=ExtResource("32_ff4bd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.7217, 0, 11.7078)
-
-[node name="Stair_middle_12" parent="scenery" instance=ExtResource("33_mhmr1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5444, -1.90735e-06, 23.7906)
-
-[node name="Stair_middle_22" parent="scenery" instance=ExtResource("34_vokoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.217, 0, 35.2662)
-
-[node name="Structure_Connection2" parent="scenery" instance=ExtResource("35_76a4c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.2, 0, 62.134)
-
-[node name="Structure_Linear_12" parent="scenery" instance=ExtResource("36_34j8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, 102.376)
-
-[node name="Structure_Linear_22" parent="scenery" instance=ExtResource("37_kl32j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.399, 0, 211.647)
-
-[node name="Structure_Linear_32" parent="scenery" instance=ExtResource("38_j7nds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.619, 0, 273.205)
-
-[node name="Sylo_Large_12" parent="scenery" instance=ExtResource("39_4iwa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.909, 0, 341.336)
-
-[node name="Sylo_Large_22" parent="scenery" instance=ExtResource("40_fpk42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.979, 0, 370.861)
-
-[node name="Sylo_Small_12" parent="scenery" instance=ExtResource("41_axfy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.1626, 0, 324.043)
-
-[node name="Sylo_Small_22" parent="scenery" instance=ExtResource("42_f6s78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.8623, 0, 348.324)
-
 [node name="Estrutura 1" type="Node3D" parent="scenery"]
 
 [node name="Pipe Curved_12" parent="scenery/Estrutura 1" instance=ExtResource("24_gwda3")]
@@ -189,6 +138,205 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
 
 [node name="Pipe Straight 22" parent="scenery/Estrutura 1" instance=ExtResource("27_en5rk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 11.33, 10)
+
+[node name="Arena" type="Node3D" parent="scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="Structure_Linear_14" parent="scenery/Arena" instance=ExtResource("36_34j8y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 532.6, 0, -824.75)
+
+[node name="Structure_Linear_23" parent="scenery/Arena" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 58.9, 0, -824.7)
+
+[node name="Structure_Linear_24" parent="scenery/Arena" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 164.34, 0, -824.7)
+
+[node name="Structure_Linear_25" parent="scenery/Arena" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 269.7, 0, -824.7)
+
+[node name="Structure_Linear_27" parent="scenery/Arena" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 374.377, 0, -824.7)
+
+[node name="Structure_Linear_28" parent="scenery/Arena" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 479.817, 0, -824.7)
+
+[node name="Structure_Linear_26" parent="scenery/Arena" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 269.7, 0, -824.7)
+
+[node name="Structure_Connection3" parent="scenery/Arena" instance=ExtResource("35_76a4c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90, 0, -820)
+
+[node name="Structure_Linear_13" parent="scenery/Arena" instance=ExtResource("36_34j8y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.5, 0, -824.75)
+
+[node name="Structure_Connection2" parent="scenery/Arena" instance=ExtResource("35_76a4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 580, 0, -812.8)
+
+[node name="Arena2" type="Node3D" parent="scenery/Arena"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 475.4, 0, -235)
+
+[node name="Structure_Linear_14" parent="scenery/Arena/Arena2" instance=ExtResource("36_34j8y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 525.886, 0, -824.72)
+
+[node name="Structure_Linear_23" parent="scenery/Arena/Arena2" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 58.9, 0, -824.7)
+
+[node name="Structure_Linear_24" parent="scenery/Arena/Arena2" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 164.34, 0, -824.7)
+
+[node name="Structure_Linear_25" parent="scenery/Arena/Arena2" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 269.7, 0, -824.7)
+
+[node name="Structure_Linear_27" parent="scenery/Arena/Arena2" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 374.377, 0, -824.7)
+
+[node name="Structure_Linear_28" parent="scenery/Arena/Arena2" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 479.817, 0, -824.7)
+
+[node name="Structure_Linear_26" parent="scenery/Arena/Arena2" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 269.7, 0, -824.7)
+
+[node name="Structure_Connection3" parent="scenery/Arena/Arena2" instance=ExtResource("35_76a4c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90, 0, -820)
+
+[node name="Structure_Linear_13" parent="scenery/Arena/Arena2" instance=ExtResource("36_34j8y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.5, 0, -824.75)
+
+[node name="Structure_Connection2" parent="scenery/Arena/Arena2" instance=ExtResource("35_76a4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 572.5, 0, -812.864)
+
+[node name="Arena 3" type="Node3D" parent="scenery/Arena/Arena2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 486.4, 0, -235)
+
+[node name="Node3D" type="Node3D" parent="scenery/Arena/Arena2/Arena 3"]
+transform = Transform3D(0.99998, 0, -0.00626569, 0, 1, 0, 0.00626569, 0, 0.99998, 588.4, 0, 533.953)
+
+[node name="Structure_Linear_23" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -687.551, 0, -1298.67)
+
+[node name="Structure_Linear_24" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -686.893, 0, -1193.67)
+
+[node name="Structure_Linear_25" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -686.235, 0, -1088.67)
+
+[node name="Structure_Linear_26" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -685.577, 0, -983.677)
+
+[node name="Structure_Linear_27" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -684.923, 0, -879.387)
+
+[node name="Structure_Linear_28" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -684.266, 0, -774.389)
+
+[node name="Structure_Linear_29" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -683.608, 0, -669.391)
+
+[node name="Structure_Linear_30" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -682.95, 0, -564.393)
+
+[node name="Structure_Linear_31" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -682.292, 0, -459.372)
+
+[node name="Structure_Linear_33" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -681.634, 0, -354.374)
+
+[node name="Structure_Linear_34" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -680.976, 0, -249.376)
+
+[node name="Structure_Linear_35" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -680.318, 0, -144.378)
+
+[node name="Structure_Linear_36" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(-0.99998, 0, -0.00626578, 0, 1, 0, 0.00626578, 0, -0.99998, -679.661, 0, -39.4404)
+
+[node name="Structure_Linear_37" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+
+[node name="Structure_Linear_38" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -105)
+
+[node name="Structure_Linear_39" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -210)
+
+[node name="Structure_Linear_40" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -315)
+
+[node name="Structure_Linear_41" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -419.292)
+
+[node name="Structure_Linear_42" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0, -524.292)
+
+[node name="Structure_Linear_43" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0, -629.292)
+
+[node name="Structure_Linear_44" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0, -734.292)
+
+[node name="Structure_Linear_45" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0, -839.315)
+
+[node name="Structure_Linear_46" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0, -944.315)
+
+[node name="Structure_Linear_47" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10352e-05, 0, -1049.32)
+
+[node name="Structure_Linear_48" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 0, -1154.32)
+
+[node name="Structure_Linear_49" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 0, -1259.25)
+
+[node name="Teste" type="Node3D" parent="scenery"]
+
+[node name="Barrel_12" parent="scenery/Teste" instance=ExtResource("23_f35sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -731.306, 0, 22.0849)
+
+[node name="Pipe Straight 12" parent="scenery/Teste" instance=ExtResource("26_uo02t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -687.556, 5.38205, 15.6628)
+
+[node name="Semi_Circle_12" parent="scenery/Teste" instance=ExtResource("28_yldv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -711.109, 6.37301, -6.42055)
+
+[node name="Semi_Circle_22" parent="scenery/Teste" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -713.835, 2.57787, -26.1021)
+
+[node name="Semi_Circle_32" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -711.285, 0.973341, 9.35294)
+
+[node name="Stair_Begnning_12" parent="scenery/Teste" instance=ExtResource("31_0l5mu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -724.922, 0, -6.29202)
+
+[node name="Stair_Begnning_22" parent="scenery/Teste" instance=ExtResource("32_ff4bd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -664.013, 0, 11.7078)
+
+[node name="Stair_middle_12" parent="scenery/Teste" instance=ExtResource("33_mhmr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -670.191, -1.90735e-06, 23.7906)
+
+[node name="Stair_middle_22" parent="scenery/Teste" instance=ExtResource("34_vokoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -668.518, 0, 35.2662)
+
+[node name="Structure_Linear_12" parent="scenery/Teste" instance=ExtResource("36_34j8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -616.735, 0, 102.376)
+
+[node name="Structure_Linear_22" parent="scenery/Teste" instance=ExtResource("37_kl32j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -538.336, 0, 211.647)
+
+[node name="Structure_Linear_32" parent="scenery/Teste" instance=ExtResource("38_j7nds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -617.116, 0, 273.205)
+
+[node name="Sylo_Large_12" parent="scenery/Teste" instance=ExtResource("39_4iwa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -614.826, 0, 341.336)
+
+[node name="Sylo_Large_22" parent="scenery/Teste" instance=ExtResource("40_fpk42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -610.756, 0, 370.861)
+
+[node name="Sylo_Small_12" parent="scenery/Teste" instance=ExtResource("41_axfy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -652.572, 0, 324.043)
+
+[node name="Sylo_Small_22" parent="scenery/Teste" instance=ExtResource("42_f6s78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -648.873, 0, 348.324)
 
 [node name="racers" type="Node3D" parent="."]
 
