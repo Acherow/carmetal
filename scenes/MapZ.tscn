@@ -96,8 +96,6 @@ shape = SubResource("BoxShape3D_p8n8q")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("1_65af0")]
 follow_target = NodePath("../racers/car")
-camera_height = null
-camera_distance = null
 rotation_damping = 10.0
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -325,6 +323,54 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -43.31
 [node name="Semi_Circle_16" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -43.3191, 29.3131, 96.715)
 
+[node name="Semi_Circle_32" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 40.043, 3.34561, 95.9897)
+
+[node name="Semi_Circle_33" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 40.043, 9.48955, 95.9897)
+
+[node name="Semi_Circle_34" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 40.043, 15.8831, 95.9897)
+
+[node name="Semi_Circle_17" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(0.224356, 0.974507, 4.25971e-08, 2.04365e-15, -4.37114e-08, 1, 0.974507, -0.224356, -9.80691e-09, 46.3909, 34.928, 102.26)
+
+[node name="Semi_Circle_18" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(0.224356, 0.974507, 4.25971e-08, 2.04365e-15, -4.37114e-08, 1, 0.974507, -0.224356, -9.80691e-09, 46.3909, 29.3131, 102.26)
+
+[node name="Semi_Circle_38" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(0.224356, 0.974507, 4.25971e-08, 2.04365e-15, -4.37114e-08, 1, 0.974507, -0.224356, -9.80691e-09, 47.1073, 3.34561, 102.139)
+
+[node name="Semi_Circle_39" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(0.224356, 0.974507, 4.25971e-08, 2.04365e-15, -4.37114e-08, 1, 0.974507, -0.224356, -9.80691e-09, 47.1073, 9.48955, 102.139)
+
+[node name="Semi_Circle_40" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(0.224356, 0.974507, 4.25971e-08, 2.04365e-15, -4.37114e-08, 1, 0.974507, -0.224356, -9.80691e-09, 47.1073, 15.8831, 102.139)
+
+[node name="Semi_Circle_19" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(0.421685, 0.906743, 3.9635e-08, 1.17812e-15, -4.37114e-08, 1, 0.906743, -0.421685, -1.84324e-08, -37.157, 34.928, 100.524)
+
+[node name="Semi_Circle_20" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(0.421685, 0.906743, 3.9635e-08, 1.17812e-15, -4.37114e-08, 1, 0.906743, -0.421685, -1.84324e-08, -37.157, 29.3131, 100.524)
+
+[node name="Semi_Circle_41" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(0.421685, 0.906743, 3.9635e-08, 1.17812e-15, -4.37114e-08, 1, 0.906743, -0.421685, -1.84324e-08, -36.4812, 3.34561, 100.257)
+
+[node name="Semi_Circle_42" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(0.421685, 0.906743, 3.9635e-08, 1.17812e-15, -4.37114e-08, 1, 0.906743, -0.421685, -1.84324e-08, -36.4812, 9.48955, 100.257)
+
+[node name="Semi_Circle_43" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(0.421685, 0.906743, 3.9635e-08, 1.17812e-15, -4.37114e-08, 1, 0.906743, -0.421685, -1.84324e-08, -36.4812, 15.8831, 100.257)
+
+[node name="Semi_Circle_35" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42.549, 3.34561, 95.9897)
+
+[node name="Semi_Circle_36" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42.549, 9.48955, 95.9897)
+
+[node name="Semi_Circle_37" parent="scenery/Arco2" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42.549, 15.8831, 95.9897)
+
 [node name="Teste" type="Node3D" parent="scenery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 815.286, 0, 0)
 
@@ -339,24 +385,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -767.802, 6.37301, 167.687)
 
 [node name="Semi_Circle_22" parent="scenery/Teste" instance=ExtResource("29_iy5j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -761.323, 2.57787, 194.015)
-
-[node name="Semi_Circle_32" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -775.243, 3.34561, 95.9897)
-
-[node name="Semi_Circle_33" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -775.243, 9.48955, 95.9897)
-
-[node name="Semi_Circle_34" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -775.243, 15.8831, 95.9897)
-
-[node name="Semi_Circle_35" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -857.835, 3.34561, 95.9897)
-
-[node name="Semi_Circle_36" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -857.835, 9.48955, 95.9897)
-
-[node name="Semi_Circle_37" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -857.835, 15.8831, 95.9897)
 
 [node name="Sylo_Large_12" parent="scenery/Teste" instance=ExtResource("39_4iwa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -614.826, 0, 125.096)
