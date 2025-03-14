@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwxof04yqugcb"]
+[gd_scene load_steps=6 format=3 uid="uid://dwxof04yqugcb"]
 
 [ext_resource type="Script" path="res://mainMenu.gd" id="1_rpwhy"]
+[ext_resource type="Texture2D" uid="uid://13orjkwsk6gt" path="res://title carnage 2.png" id="2_5twdb"]
+[ext_resource type="Texture2D" uid="uid://c1fbtyagx3vwg" path="res://texturas/buttonLayout.png" id="2_coh43"]
+[ext_resource type="Texture2D" uid="uid://drga8ndtm8u3h" path="res://Capturar.PNG" id="4_xfjt6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_copln"]
+texture = ExtResource("2_coh43")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,20 +19,82 @@ script = ExtResource("1_rpwhy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(4.3, 0)
-layout_mode = 0
-offset_left = 524.0
-offset_top = 213.0
-offset_right = 559.0
-offset_bottom = 317.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.29
+offset_top = -52.0
+offset_right = 62.71
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2.92, 2.92)
+pivot_offset = Vector2(50, 0)
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_copln")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover = SubResource("StyleBoxTexture_copln")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_copln")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/normal = SubResource("StyleBoxTexture_copln")
 text = "Start"
 
 [node name="Button4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_copln")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/hover = SubResource("StyleBoxTexture_copln")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_copln")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_copln")
+theme_override_styles/normal = SubResource("StyleBoxTexture_copln")
 text = "Quit"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -194.0
+offset_right = 128.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5twdb")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -851.0
+offset_top = -374.0
+offset_right = 368.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("4_xfjt6")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
