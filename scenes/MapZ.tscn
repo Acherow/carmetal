@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cmx5c2dabntjt"]
+[gd_scene load_steps=40 format=3 uid="uid://cmx5c2dabntjt"]
 
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="1_65af0"]
 [ext_resource type="Texture2D" uid="uid://cjseyimrkxxax" path="res://road.png" id="2_8ooqr"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://bnpjuh4wwr27o" path="res://models/Teste/Structure_Connection.glb" id="35_76a4c"]
 [ext_resource type="PackedScene" uid="uid://yu4stfpiyukx" path="res://models/Teste/Structure_Linear_1.glb" id="36_34j8y"]
 [ext_resource type="PackedScene" uid="uid://cokm7ju1l8xfo" path="res://models/Teste/Structure_Linear_2.glb" id="37_kl32j"]
-[ext_resource type="PackedScene" uid="uid://b45ur2v1as5hs" path="res://models/Teste/Structure_Linear_3.glb" id="38_j7nds"]
 [ext_resource type="PackedScene" uid="uid://b4lybms08sqi6" path="res://models/Teste/Sylo_Large_1.glb" id="39_4iwa5"]
 [ext_resource type="PackedScene" uid="uid://b5r3nt51ly8a7" path="res://models/Teste/Sylo_Large_2.glb" id="40_fpk42"]
 [ext_resource type="PackedScene" uid="uid://b23gosfpv61lw" path="res://models/Teste/Sylo_Small_1.glb" id="41_axfy4"]
@@ -127,17 +126,6 @@ path = NodePath("../Path3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("PlaneMesh_lq21v")
 skeleton = NodePath("../..")
-
-[node name="Estrutura 1" type="Node3D" parent="scenery"]
-
-[node name="Pipe Curved_12" parent="scenery/Estrutura 1" instance=ExtResource("24_gwda3")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20.8063, 0, 10)
-
-[node name="Pipe Curved_22" parent="scenery/Estrutura 1" instance=ExtResource("25_6n5u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
-
-[node name="Pipe Straight 22" parent="scenery/Estrutura 1" instance=ExtResource("27_en5rk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 11.33, 10)
 
 [node name="Arena" type="Node3D" parent="scenery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
@@ -288,55 +276,225 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 0, -1154.32)
 [node name="Structure_Linear_49" parent="scenery/Arena/Arena2/Arena 3/Node3D" instance=ExtResource("37_kl32j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 0, -1259.25)
 
+[node name="Arco1" type="Node3D" parent="scenery"]
+
+[node name="Pipe Curved_12" parent="scenery/Arco1" instance=ExtResource("24_gwda3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20.8063, 0, 10)
+
+[node name="Pipe Curved_22" parent="scenery/Arco1" instance=ExtResource("25_6n5u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
+
+[node name="Pipe Straight 22" parent="scenery/Arco1" instance=ExtResource("27_en5rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 11.33, 10)
+
+[node name="Arco2" type="Node3D" parent="scenery"]
+
+[node name="Sylo_Large_13" parent="scenery/Arco2" instance=ExtResource("39_4iwa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 103.91)
+
+[node name="Sylo_Large_14" parent="scenery/Arco2" instance=ExtResource("39_4iwa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 18.6985, 103.91)
+
+[node name="Sylo_Large_15" parent="scenery/Arco2" instance=ExtResource("39_4iwa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3019, 0, 103.91)
+
+[node name="Sylo_Large_16" parent="scenery/Arco2" instance=ExtResource("39_4iwa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3019, 18.6985, 103.91)
+
+[node name="Pipe Straight 23" parent="scenery/Arco2" instance=ExtResource("27_en5rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4187, 25.7636, 103.851)
+
+[node name="Pipe Straight 24" parent="scenery/Arco2" instance=ExtResource("27_en5rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23012, 25.7636, 103.851)
+
+[node name="Pipe Straight 25" parent="scenery/Arco2" instance=ExtResource("27_en5rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.626, 25.7636, 103.851)
+
+[node name="Semi_Circle_13" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 40, 34.928, 96.715)
+
+[node name="Semi_Circle_14" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 40, 29.3131, 96.715)
+
+[node name="Semi_Circle_15" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -43.3191, 34.928, 96.715)
+
+[node name="Semi_Circle_16" parent="scenery/Arco2" instance=ExtResource("28_yldv8")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -43.3191, 29.3131, 96.715)
+
 [node name="Teste" type="Node3D" parent="scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 815.286, 0, 0)
 
 [node name="Barrel_12" parent="scenery/Teste" instance=ExtResource("23_f35sx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -731.306, 0, 22.0849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -799.724, 0, -2.84197)
 
 [node name="Pipe Straight 12" parent="scenery/Teste" instance=ExtResource("26_uo02t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -687.556, 5.38205, 15.6628)
 
 [node name="Semi_Circle_12" parent="scenery/Teste" instance=ExtResource("28_yldv8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -711.109, 6.37301, -6.42055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -767.802, 6.37301, 167.687)
 
 [node name="Semi_Circle_22" parent="scenery/Teste" instance=ExtResource("29_iy5j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -713.835, 2.57787, -26.1021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -761.323, 2.57787, 194.015)
 
 [node name="Semi_Circle_32" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -711.285, 0.973341, 9.35294)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -775.243, 3.34561, 95.9897)
 
-[node name="Stair_Begnning_12" parent="scenery/Teste" instance=ExtResource("31_0l5mu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -724.922, 0, -6.29202)
+[node name="Semi_Circle_33" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -775.243, 9.48955, 95.9897)
 
-[node name="Stair_Begnning_22" parent="scenery/Teste" instance=ExtResource("32_ff4bd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -664.013, 0, 11.7078)
+[node name="Semi_Circle_34" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -775.243, 15.8831, 95.9897)
 
-[node name="Stair_middle_12" parent="scenery/Teste" instance=ExtResource("33_mhmr1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -670.191, -1.90735e-06, 23.7906)
+[node name="Semi_Circle_35" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -857.835, 3.34561, 95.9897)
 
-[node name="Stair_middle_22" parent="scenery/Teste" instance=ExtResource("34_vokoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -668.518, 0, 35.2662)
+[node name="Semi_Circle_36" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -857.835, 9.48955, 95.9897)
 
-[node name="Structure_Linear_12" parent="scenery/Teste" instance=ExtResource("36_34j8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -616.735, 0, 102.376)
-
-[node name="Structure_Linear_22" parent="scenery/Teste" instance=ExtResource("37_kl32j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -538.336, 0, 211.647)
-
-[node name="Structure_Linear_32" parent="scenery/Teste" instance=ExtResource("38_j7nds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -617.116, 0, 273.205)
+[node name="Semi_Circle_37" parent="scenery/Teste" instance=ExtResource("30_frf8w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -857.835, 15.8831, 95.9897)
 
 [node name="Sylo_Large_12" parent="scenery/Teste" instance=ExtResource("39_4iwa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -614.826, 0, 341.336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -614.826, 0, 125.096)
 
 [node name="Sylo_Large_22" parent="scenery/Teste" instance=ExtResource("40_fpk42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -610.756, 0, 370.861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -610.756, 0, 154.621)
 
 [node name="Sylo_Small_12" parent="scenery/Teste" instance=ExtResource("41_axfy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -652.572, 0, 324.043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -652.572, 0, 107.803)
+
+[node name="Sylo_Small_13" parent="scenery/Teste" instance=ExtResource("41_axfy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -653.289, -0.60338, 76.9926)
 
 [node name="Sylo_Small_22" parent="scenery/Teste" instance=ExtResource("42_f6s78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -648.873, 0, 348.324)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -648.873, 0, 132.084)
+
+[node name="Stair_middle_12" parent="scenery" instance=ExtResource("33_mhmr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.667, 0, 17.3685)
+
+[node name="Stair_middle_22" parent="scenery" instance=ExtResource("34_vokoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.34, 0, 28.8441)
+
+[node name="Stair_middle_23" parent="scenery" instance=ExtResource("34_vokoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.279, 0, 28.8441)
+
+[node name="Escadas1" type="Node3D" parent="scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 176.268)
+
+[node name="Stair_Begnning_12" parent="scenery/Escadas1" instance=ExtResource("31_0l5mu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -34.026)
+
+[node name="Stair_Begnning_22" parent="scenery/Escadas1" instance=ExtResource("32_ff4bd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30, 0, 2.41185)
+
+[node name="Stair_middle_13" parent="scenery/Escadas1" instance=ExtResource("33_mhmr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -22.6323)
+
+[node name="Stair_middle_14" parent="scenery/Escadas1" instance=ExtResource("33_mhmr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -11.5404)
+
+[node name="Stair_Begnning_13" parent="scenery/Escadas1" instance=ExtResource("31_0l5mu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9896, 0, -34.026)
+
+[node name="Stair_Begnning_24" parent="scenery/Escadas1" instance=ExtResource("32_ff4bd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -32.9896, 0, 2.41185)
+
+[node name="Stair_middle_15" parent="scenery/Escadas1" instance=ExtResource("33_mhmr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9896, 0, -22.6323)
+
+[node name="Stair_middle_16" parent="scenery/Escadas1" instance=ExtResource("33_mhmr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9896, 0, -11.5404)
+
+[node name="Pipe Curved_13" parent="scenery/Escadas1" instance=ExtResource("24_gwda3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.7779, 51.7077, 24.5686)
+
+[node name="Semi_Circle_23" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 23.6898, 2.57787, 25.0328)
+
+[node name="Semi_Circle_24" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 23.6898, 2.57787, 24.3163)
+
+[node name="Semi_Circle_25" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 23.6898, 20.2355, 25.0328)
+
+[node name="Semi_Circle_26" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 23.6898, 20.2355, 24.3163)
+
+[node name="Semi_Circle_27" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 23.6898, 37.3445, 25.0328)
+
+[node name="Semi_Circle_28" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 23.6898, 37.3445, 24.3163)
+
+[node name="Semi_Circle_35" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 23.6898, 44.7336, 25.0328)
+
+[node name="Semi_Circle_36" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 23.6898, 44.7336, 24.3163)
+
+[node name="Semi_Circle_29" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, 17.0869, 63.5363, 24.535)
+
+[node name="Semi_Circle_30" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, 17.0869, 63.5363, 25.2515)
+
+[node name="Semi_Circle_31" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -0.570747, 63.5363, 24.535)
+
+[node name="Semi_Circle_32" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -0.570747, 63.5363, 25.2515)
+
+[node name="Semi_Circle_33" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -17.6798, 63.5363, 24.535)
+
+[node name="Semi_Circle_34" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -17.6798, 63.5363, 25.2515)
+
+[node name="Semi_Circle_37" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -34.1747, 63.5363, 24.535)
+
+[node name="Semi_Circle_38" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -34.1747, 63.5363, 25.2515)
+
+[node name="Semi_Circle_39" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -51.8323, 63.5363, 24.535)
+
+[node name="Semi_Circle_40" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -51.8323, 63.5363, 25.2515)
+
+[node name="Semi_Circle_41" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -68.9414, 63.5363, 24.535)
+
+[node name="Semi_Circle_42" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -68.9414, 63.5363, 25.2515)
+
+[node name="Semi_Circle_43" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -80.5551, 63.5363, 24.535)
+
+[node name="Semi_Circle_44" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -80.5551, 63.5363, 25.2515)
+
+[node name="Semi_Circle_45" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -98.2127, 63.5363, 24.535)
+
+[node name="Semi_Circle_46" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -98.2127, 63.5363, 25.2515)
+
+[node name="Semi_Circle_47" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, -4.37114e-08, 3.82137e-15, 1, -4.37114e-08, -115.322, 63.5363, 24.535)
+
+[node name="Semi_Circle_48" parent="scenery/Escadas1" instance=ExtResource("29_iy5j6")]
+transform = Transform3D(-4.37114e-08, 1.31134e-07, -1, 1, -1.50996e-07, -4.37114e-08, -1.50996e-07, -1, -1.31134e-07, -115.322, 63.5363, 25.2515)
+
+[node name="Pipe Straight 26" parent="scenery/Escadas1" instance=ExtResource("27_en5rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.833, 25.4138, 24.3308)
+
+[node name="Sylo_Large_23" parent="scenery/Escadas1" instance=ExtResource("40_fpk42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.599, 55.4366, 23.7386)
+
+[node name="Sylo_Large_24" parent="scenery/Escadas1" instance=ExtResource("40_fpk42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.599, 14.9856, 23.7386)
 
 [node name="racers" type="Node3D" parent="."]
 
