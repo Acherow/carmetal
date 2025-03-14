@@ -1,6 +1,7 @@
 extends Node
+class_name race_manager
 
-@export var maxlaps : int = 3
+@export var maxlaps : int = 0
 
 @export var racerstobe : Node3D
 @export var trucks : Array[car]
@@ -38,7 +39,7 @@ func _process(delta: float) -> void:
 		checkplacement(racers[n])
 		if(racers[n].lap > maxlaps):
 			endplacements.append(racers[n])
-	racers.filter(func(a): return !endplacements.has(a))
+	racers = racers.filter(func(a): return !endplacements.has(a))
 	allracers.clear()
 	allracers.append_array(endplacements)
 	allracers.append_array(racers)
@@ -64,7 +65,7 @@ func checkplacement(racer : carinfo):
 	elif(racer.checkpoint == index - 1):
 		racer.checkpointcount += 1
 		racer.checkpoint = index
-	if(index == 0 && racer.checkpointcount + 1 >= checkpoints.size()):
+	if(racer.checkpointcount + 1 >= checkpoints.size()):
 		racer.lap += 1
 		racer.checkpointcount = 0
 		racer.checkpoint = 0

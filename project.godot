@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Navigation="*res://scripts/Navigation.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 left={

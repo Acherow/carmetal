@@ -52,8 +52,8 @@ anim_speed_max = 1.0
 
 [node name="Smoke_A" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_q0rep")
-amount = 100
-lifetime = 0.6
+amount = 200
+lifetime = 0.3
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_nwdfc")
 draw_pass_1 = SubResource("QuadMesh_qw3a4")
