@@ -27,6 +27,9 @@ func _ready() -> void:
 var ended : bool = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if(follow_target == null):
+		return
+	
 	if(!ended && man.endplacements.has(man.getInfo(follow_target))):
 		ended = true
 		anim.play("end")

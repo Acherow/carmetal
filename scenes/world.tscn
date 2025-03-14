@@ -95,7 +95,6 @@ shape = SubResource("BoxShape3D_p8n8q")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_m7ru0")]
 follow_target = NodePath("../racers/car")
-camera_height = 2.0
 camera_distance = 10.0
 rotation_damping = 10.0
 

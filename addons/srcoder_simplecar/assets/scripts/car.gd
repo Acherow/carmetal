@@ -3,7 +3,7 @@ class_name car
 
 var health : int = 100
 var boost : int = 100
-
+const explosion = preload("res://VFX/VFX_carwars/Scenes/VFX_Explosion_A.tscn")
 #@export_category("Car Settings")
 ## max steer in radians for the front wheels- defaults to 0.45
 var max_steer : float = .2
@@ -118,5 +118,10 @@ func collisionentered(body):
 	var damage = body.linear_velocity.length() - linear_velocity.length()
 	if(linear_velocity.length() < body.linear_velocity.length()):
 		health -= damage
+		if(health <= 0):
+			var exp = explosion.instantiate()
+			get_tree().current_scene.add_child(exp)
+			exp.global_position = global_position
+			queue_free()
 	else:
 		boost -= damage
