@@ -24,10 +24,16 @@ func _ready() -> void:
 	pivot.position.y = camera_height
 	springarm.spring_length = camera_distance
 
+var died : bool = false
 var ended : bool = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if(follow_target == null):
+		if(!died):
+			died = true
+			await get_tree().create_timer(3).timeout
+			print("cock")
+			get_tree().change_scene_to_file('res://scenes/start.tscn')
 		return
 	
 	if(!ended && man.endplacements.has(man.getInfo(follow_target))):
