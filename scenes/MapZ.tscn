@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cmx5c2dabntjt"]
+[gd_scene load_steps=41 format=3 uid="uid://cmx5c2dabntjt"]
 
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="1_65af0"]
 [ext_resource type="Texture2D" uid="uid://cjseyimrkxxax" path="res://road.png" id="2_8ooqr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/enemyAI.gd" id="22_c32q6"]
 [ext_resource type="PackedScene" uid="uid://blwrfv3yaxlsd" path="res://models/Teste/Barrel_1.glb" id="23_f35sx"]
 [ext_resource type="PackedScene" uid="uid://dn23n7rf6sw2x" path="res://models/Teste/Pipe Curved_1.glb" id="24_gwda3"]
+[ext_resource type="PackedScene" path="res://Assets_ready/pitstop.tscn" id="24_jr65p"]
 [ext_resource type="PackedScene" uid="uid://fgs2jk78p0s2" path="res://models/Teste/Pipe Curved_2.glb" id="25_6n5u0"]
 [ext_resource type="PackedScene" uid="uid://cn6aawnebie27" path="res://models/Teste/Pipe Straight 1.glb" id="26_uo02t"]
 [ext_resource type="PackedScene" uid="uid://v8kmhb6x7ldw" path="res://models/Teste/Pipe Straight 2.glb" id="27_en5rk"]
@@ -95,6 +96,8 @@ shape = SubResource("BoxShape3D_p8n8q")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("1_65af0")]
 follow_target = NodePath("../racers/car")
+camera_height = null
+camera_distance = null
 rotation_damping = 10.0
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -495,6 +498,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.599, 55.4366, 23.7386)
 
 [node name="Sylo_Large_24" parent="scenery/Escadas1" instance=ExtResource("40_fpk42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.599, 14.9856, 23.7386)
+
+[node name="Node3D" parent="scenery" instance=ExtResource("24_jr65p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7127, 0, 59.3259)
 
 [node name="racers" type="Node3D" parent="."]
 
