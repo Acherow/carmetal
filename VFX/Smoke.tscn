@@ -38,7 +38,7 @@ direction = Vector3(0, 1, 0)
 spread = 0.0
 initial_velocity_min = 0.9
 initial_velocity_max = 1.5
-angular_velocity_min = -50.0
+angular_velocity_min = -425.65
 angular_velocity_max = 50.0
 gravity = Vector3(0, 0, 0)
 scale_max = 2.0
@@ -50,12 +50,10 @@ anim_speed_max = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_qw3a4"]
 
-[node name="Smoke" type="Node3D"]
-
-[node name="Smoke_A" type="GPUParticles3D" parent="."]
+[node name="Smoke_A" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_q0rep")
-amount = 30
-lifetime = 1.6
+amount = 100
+lifetime = 0.6
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_nwdfc")
 draw_pass_1 = SubResource("QuadMesh_qw3a4")

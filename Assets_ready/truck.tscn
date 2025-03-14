@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://wu12spcu4kb3"]
+[gd_scene load_steps=59 format=4 uid="uid://wu12spcu4kb3"]
 
 [ext_resource type="Texture2D" uid="uid://thd1rd17i6e0" path="res://Pixel Truck Texture/chassi_BaseColor.1001.png" id="1_uqk30"]
 [ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/car.gd" id="1_wl8dt"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://4c5k2dpulhrj" path="res://Pixel Truck Texture/pneu.001_BaseColor.1001.png" id="8_1m660"]
 [ext_resource type="Texture2D" uid="uid://dua2i6r4olqaw" path="res://Pixel Truck Texture/RAMPA_BaseColor.1001.png" id="9_5uq2k"]
 [ext_resource type="Texture2D" uid="uid://bwiiekmaes4ru" path="res://Pixel Truck Texture/retrovisor.001_BaseColor.1001.png" id="10_q4hca"]
+[ext_resource type="PackedScene" uid="uid://c3ubcdcqtqfbn" path="res://VFX/Smoke.tscn" id="12_x8g3t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oph1"]
 resource_name = "chassi"
@@ -702,3 +703,9 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_kl7gd")
+
+[node name="Smoke" parent="." instance=ExtResource("12_x8g3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41834, 2.86975, -0.908573)
+
+[node name="Smoke2" parent="." instance=ExtResource("12_x8g3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.418, 2.87, -0.909)

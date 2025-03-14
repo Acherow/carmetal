@@ -34,6 +34,8 @@ var player_boost : bool = false
 @export var frontwheels : Array[VehicleWheel3D]
 
 @onready var chassi: MeshInstance3D = $"First Car/chassi principal"
+@onready var smoke: GPUParticles3D = $Smoke
+@onready var smoke2: GPUParticles3D = $Smoke2
 
 
 @export var textures : Array[Texture2D]
@@ -74,6 +76,8 @@ func get_input(delta : float):
 	if(!on):
 		return
 	
+	smoke.emitting = player_input.y != 0
+	smoke2.emitting = player_input.y != 0
 	#steer first
 	_playersteer = player_input.x * max_steer
 	

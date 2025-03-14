@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://l0ywxdjsxbbi"]
+[gd_scene load_steps=60 format=4 uid="uid://l0ywxdjsxbbi"]
 
 [ext_resource type="Texture2D" uid="uid://thd1rd17i6e0" path="res://Pixel Truck Texture/chassi_BaseColor.1001.png" id="1_uqk30"]
 [ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/car.gd" id="1_wl8dt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dua2i6r4olqaw" path="res://Pixel Truck Texture/RAMPA_BaseColor.1001.png" id="9_5uq2k"]
 [ext_resource type="Texture2D" uid="uid://bwiiekmaes4ru" path="res://Pixel Truck Texture/retrovisor.001_BaseColor.1001.png" id="10_q4hca"]
 [ext_resource type="Script" path="res://scripts/truckAI.gd" id="12_e6m8k"]
+[ext_resource type="PackedScene" uid="uid://c3ubcdcqtqfbn" path="res://VFX/Smoke.tscn" id="13_ujvp8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oph1"]
 resource_name = "chassi"
@@ -722,3 +723,9 @@ shape = SubResource("BoxShape3D_nrslt")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("12_e6m8k")
+
+[node name="Smoke" parent="." instance=ExtResource("13_ujvp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13078, 4.36975, -1.54887)
+
+[node name="Smoke2" parent="." instance=ExtResource("13_ujvp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.131, 4.37, -1.5493)

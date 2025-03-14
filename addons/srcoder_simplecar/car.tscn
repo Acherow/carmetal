@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://7l1irinimxa"]
+[gd_scene load_steps=74 format=4 uid="uid://7l1irinimxa"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cuw7isymmyyku" path="res://addons/srcoder_simplecar/assets/materials/metal_physics_material.phymat" id="1_vukum"]
 [ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/car.gd" id="1_ymx53"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cbbpyh7s868ed" path="res://PIXEL texture/retrovisor_BaseColor.png" id="14_skr3k"]
 [ext_resource type="Texture2D" uid="uid://d3e2vgh5raxjf" path="res://PIXEL texture/vidro_BaseColor.png" id="15_tokg6"]
 [ext_resource type="Texture2D" uid="uid://pncemqepegbm" path="res://PIXEL texture/pneu_BaseColor.png" id="16_cqh14"]
+[ext_resource type="PackedScene" uid="uid://c3ubcdcqtqfbn" path="res://VFX/Smoke.tscn" id="17_h0hju"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0g6d0"]
 size = Vector3(1.40527, 1.65869, 4.02441)
@@ -882,5 +883,11 @@ damping_relaxation = 0.7
 [node name="pneu4" type="MeshInstance3D" parent="WheelBackRight"]
 mesh = SubResource("ArrayMesh_tnkun")
 skeleton = NodePath("")
+
+[node name="Smoke" parent="." instance=ExtResource("17_h0hju")]
+transform = Transform3D(1, 0, 0, 0, 0.768071, 0.640364, 0, -0.640364, 0.768071, -1.02938, 1.36975, -0.908573)
+
+[node name="Smoke2" parent="." instance=ExtResource("17_h0hju")]
+transform = Transform3D(1, 0, 0, 0, 0.768071, 0.640364, 0, -0.640364, 0.768071, 1.029, 1.37, -0.909)
 
 [connection signal="body_entered" from="." to="." method="collisionentered"]
